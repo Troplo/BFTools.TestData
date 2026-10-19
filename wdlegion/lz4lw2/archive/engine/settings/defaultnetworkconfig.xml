@@ -1,0 +1,252 @@
+<Profile
+    TimeOutEnabled="1"
+    EmulatorEnabled="1"
+    EmulatorProfile="normal"
+    OnlineEnginePort="9000"
+    OnlineServicePort="9001"
+    ScanPortStart="9000"
+    ScanFreePorts="1"
+    ScanPortRange="1000"
+    LogEnabled="0"
+    VoiceChatEnabled="1"
+    ConnectionCheckVersionsMatchEnabled="1"
+    EnableNatTraversal="1"
+    HostMigrationEnabled="1"
+    UseStarTopology="0"
+    >
+
+    <StormLog
+        EnabledInRetail="1"
+    >
+<!--
+    Sink configuration:
+
+    Default values:
+        Bloomberg="0"
+        Type="" - treated as "File"
+        Filename=""
+        Count="0"
+        MaxSize=2000000
+
+    Id = name of the sink
+
+    Enabled = 0,1
+
+    Scope:
+        0 - all
+        1 - pc only
+        2 - consoles only
+
+    Bloomberg:
+        0 - do not add to bloomberg
+        1 - always add to bloomberg
+
+    Type:
+        1. File - regular file on disk. Attributes: Filename - obvious, default is "storm-default-{login}.txt".
+        2. Memory - circular buffer in memory. Attributes: MaxSize - size of buffer in memory. Filename(optional) - file to dump this log on shutdown or Flush.
+        3. MultiFile - kind of circular buffer built on files (very usefull for big logs on consoles).
+            Attributes: Count = number of files in log. MaxSize - max size of Each file. Filename - file name pattern, default is "storm-default-{login}-{num}.txt".
+
+    Tags in file names:
+        {login} - login (empty on consoles). Plus if there is more that one instance, login will be truncated and {pid} will be added. (kindof "{login}-{pid})
+        {pid} - process id (empty on consoles)
+        {num} - file index in MultiFile log.
+-->
+        <Sinks>
+            <sink id="" Bloomberg="1" Filename="storm-default-{login}.txt" />
+            <!-- This 'net' sink was reduced to 5MB as we were running into OOM issues on durango.
+                 You may want to increase this value for specific Storm debug purpose -->
+            <sink id="net" Enabled="1" Bloomberg="1" Type="Memory" Filename="storm-net-{login}.txt" MaxSize="5000000" />
+            <sink id="punch" Enabled="1" Bloomberg="1" Type="File" Filename="storm-punch-{login}.txt" />
+            <sink id="session" Enabled="1" Bloomberg="1" Type="File" Filename="storm-session-{login}.txt" />
+            <sink id="voice" Enabled="1" Bloomberg="1" Type="File" Filename="storm-voice-{login}.txt" />
+        </Sinks>
+
+<!-- Filters configutation:
+
+    Id = name of the filter. should be exactly the same as in Storm
+    Log = [0,1] - enable or disable logging of this filter
+    Trace = [0,1] - enable of disable debug output of this filter
+    Level: will be cropped to storm::log::Debug1 in retail
+        0 - None        = 0,//!< No log is generated.
+        1 - Error,          //!< An error is encountered which may affect the behavior of the module.
+        2 - Warning,        //!< A problem has been encountered but the behavior of the module is not affected.
+        3 - Debug1,         //!< Brief debug logs are generated.
+        4 - Debug2,         //!< Detailed debug logs are generated.
+    SinkId = name of the sink from the list above
+    Filename = new File sink with id "auto-<filtername>" will be created and filter will be set to put logs in to this new sink.
+
+    Default values:
+            Level="2"
+            Trace="0"
+            SinkId=""
+-->
+        <Filters>
+            <!-- Default filter. Will accumulate entries for unknown filters. -->
+            <filter Id=""                           SinkId="" Level="2" />
+
+            <filter Id="atomicreadwritelock"        />
+            <filter Id="bandwidth"                  />
+            <filter Id="bandwidthregulator"         />
+            <filter Id="banmanager"                 />
+            <filter Id="connection"                 />
+            <filter Id="dynamictype"                />
+            <filter Id="emulator"                   />
+            <filter Id="emulatorcorruptpacket"      />
+            <filter Id="engine"                     />
+            <filter Id="eresult"                    />
+            <filter Id="eventdispatcher"            />
+            <filter Id="filedownload"               />
+            <filter Id="handler"                    />
+            <filter Id="handshaking"                />
+            <filter Id="heartbeat"                  />
+            <filter Id="lanmanager"                 />
+            <filter Id="latencyobject"              />
+            <filter Id="logmanager"                 />
+            <filter Id="loopback"                   />
+            <filter Id="memory"                     />
+            <filter Id="message"                    />
+            <filter Id="netagent"                   SinkId="net" Level="2" />
+            <filter Id="netinvoke"                  SinkId="net" />
+            <filter Id="netobject"                  SinkId="net" Level="3" />
+            <filter Id="netobjectserialize"         SinkId="net" />
+            <filter Id="netobjectstats"             />
+            <filter Id="netobjectsynchronization"   />
+            <filter Id="NetObjectUtility"           />
+            <filter Id="nettrafficstats"            />
+            <filter Id="nomgrstats"                 />
+            <filter Id="objectadapter"              />
+            <filter Id="objectadapterreadwrite"     />
+            <filter Id="objectsimulationmanager"    />
+            <filter Id="packer"                     />
+            <filter Id="packet"                     />
+            <filter Id="peerchannel"                />
+            <filter Id="peermanager"                SinkId="session" Level="3" />
+            <filter Id="player"                     />
+            <filter Id="pluginmanager"              />
+            <filter Id="qos"                        SinkId="session" Level="3" />
+            <filter Id="replay"                     />
+            <filter Id="simulationadapter"          />
+            <filter Id="simulationcamera"           />
+            <filter Id="socket"                     />
+            <filter Id="statistics"                 />
+            <filter Id="streammetrics"              />
+            <filter Id="streampacker"               SinkId="voice" />
+            <filter Id="streamsize"                 />
+            <filter Id="timer"                      />
+            <filter Id="trysync"                    />
+            <filter Id="voice"                      SinkId="voice" Level="4" />
+
+            <!-- Session -->
+            <filter Id="session"                    SinkId="session" Level="3" />
+
+            <filter Id="group"                      SinkId="session" Level="3" />
+
+            <!-- Punch Related -->
+            <filter Id="miniupnp"                   SinkId="punch" />
+            <filter Id="punchclient"                SinkId="punch" Level="3" />
+            <filter Id="punchdetect"                SinkId="punch" Level="3" />
+            <filter Id="punchserver"                />
+            <filter Id="punchtraversal"             SinkId="punch" Level="3" />
+            <filter Id="punchupnp"                  SinkId="punch" />
+
+            <!-- Relay Related -->
+            <filter Id="relay"                      />
+
+            <filter Id="statspackets"               />
+            <filter Id="statstransmissionhistory"   />
+            <filter Id="transmissionhistory"        />
+
+            <!-- Transport -->
+            <filter Id="linkmanager"                SinkId="session" Level="3" />
+            <filter Id="networkmanager"             />
+            <filter Id="routingprotocolmanager"     />
+            <filter Id="security"                   />
+            <filter Id="transportmanager"           SinkId="session" Level="3" />
+            <filter Id="transportstats"             SinkId="session" Level="3" />
+
+            <!-- Session Directory -->
+            <filter Id="sessiondirectory"           />
+            
+            <!-- Simple Controllers -->
+            <filter Id="simplectrlrdvoperation"     />
+            <filter Id="simplectrlconnectionstate"  />
+            <filter Id="simplectrlsandboxoperation" />
+            <filter Id="simplectrlsession"          />
+            <filter Id="simplectrlobject"           />
+            <filter Id="simplectrlsimulation"       />
+            <filter Id="simplectrlpeerchannel"      />
+            <filter Id="simplectrlvoice"            />
+            <filter Id="simplectrlpeer"             />
+            <filter Id="simplectrlpunch"            />
+            <filter Id="simplectrlgroup"            />
+            <filter Id="simplectrltracking"         />
+            <filter Id="simplectrlrouter"           />
+            <filter Id="simplectrlubiservices"      />
+            <filter Id="simplectrlasyncop"          />
+        </Filters>
+
+    </StormLog>
+
+    <EmulatorProfiles>
+        <profile name="default">
+        </profile>
+        <profile name="good">
+            <drop_send_packet ratio="0.005" />
+            <duplicate_send_packet ratio="0" minimum_duplicate_packet_count="0" maximum_duplicate_packet_count="0" />
+            <delay_send_packet ratio="1" minimum_time_delay_ms="25" maximum_time_delay_ms="50" drop_first="0" />
+            <reorder_send_packet ratio="0" minimum_time_delay_ms="0" maximum_time_delay_ms="0" drop_first="0" />
+            <corrupt_received_packet ratio="0.005" />
+            <upload_bandwidth bandwidth="1024000" maxdelay="800" />
+        </profile>
+        <profile name="normal">
+            <drop_send_packet ratio="0.02" />
+            <duplicate_send_packet ratio="0" minimum_duplicate_packet_count="0" maximum_duplicate_packet_count="0" />
+            <delay_send_packet ratio="1" minimum_time_delay_ms="50" maximum_time_delay_ms="100" drop_first="0" />
+            <reorder_send_packet ratio="0.01" minimum_time_delay_ms="50" maximum_time_delay_ms="100" drop_first="0" />
+            <corrupt_received_packet ratio="0.02" />
+            <upload_bandwidth bandwidth="512000" maxdelay="800" />
+        </profile>
+        <profile name="bad">
+            <drop_send_packet ratio="0.07" />
+            <duplicate_send_packet ratio="0" minimum_duplicate_packet_count="0" maximum_duplicate_packet_count="0" />
+            <delay_send_packet ratio="1" minimum_time_delay_ms="150" maximum_time_delay_ms="300" drop_first="0" />
+            <reorder_send_packet ratio="0.05" minimum_time_delay_ms="150" maximum_time_delay_ms="300" drop_first="0" />
+            <corrupt_received_packet ratio="0.01" />
+            <upload_bandwidth bandwidth="128000" maxdelay="800" />
+        </profile>
+        <profile name="worst">
+            <drop_send_packet ratio="0.4" />
+            <duplicate_send_packet ratio="0" minimum_duplicate_packet_count="0" maximum_duplicate_packet_count="0" />
+            <delay_send_packet ratio="1" minimum_time_delay_ms="300" maximum_time_delay_ms="750" drop_first="0" />
+            <reorder_send_packet ratio="0.4" minimum_time_delay_ms="300" maximum_time_delay_ms="750" drop_first="0" />
+            <corrupt_received_packet ratio="0.4" />
+            <upload_bandwidth bandwidth="64000" maxdelay="800" />
+        </profile>
+        <profile name="block">
+            <drop_send_packet ratio="1.0" />
+            <duplicate_send_packet ratio="0" minimum_duplicate_packet_count="0" maximum_duplicate_packet_count="0" />
+            <delay_send_packet ratio="1" minimum_time_delay_ms="25" maximum_time_delay_ms="50" drop_first="0" />
+            <reorder_send_packet ratio="0" minimum_time_delay_ms="0" maximum_time_delay_ms="0" drop_first="0" />
+            <corrupt_received_packet ratio="1.0" />
+            <upload_bandwidth bandwidth="0" maxdelay="800" />
+        </profile>
+        <profile name="normal_highbw">
+            <drop_send_packet ratio="0.02" />
+            <duplicate_send_packet ratio="0" minimum_duplicate_packet_count="0" maximum_duplicate_packet_count="0" />
+            <delay_send_packet ratio="1" minimum_time_delay_ms="50" maximum_time_delay_ms="100" drop_first="0" />
+            <reorder_send_packet ratio="0.01" minimum_time_delay_ms="50" maximum_time_delay_ms="100" drop_first="0" />
+            <corrupt_received_packet ratio="0.02" />
+            <upload_bandwidth bandwidth="2048000" maxdelay="800" />
+        </profile>
+        <profile name="normal_nodrop">
+            <drop_send_packet ratio="0" />
+            <duplicate_send_packet ratio="0" minimum_duplicate_packet_count="0" maximum_duplicate_packet_count="0" />
+            <delay_send_packet ratio="0" minimum_time_delay_ms="0" maximum_time_delay_ms="0" drop_first="0" />
+            <reorder_send_packet ratio="0" minimum_time_delay_ms="0" maximum_time_delay_ms="0" drop_first="0" />
+            <corrupt_received_packet ratio="0" />
+            <upload_bandwidth bandwidth="512000" maxdelay="800" />
+        </profile>
+    </EmulatorProfiles>
+    <DebugView EntityViewEnabled="0" EntityViewVerbosity="0" EntityViewFilterDistance="50" />
+</Profile>

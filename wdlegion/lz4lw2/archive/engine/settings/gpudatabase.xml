@@ -1,0 +1,554 @@
+<!--
+	Rating Values :
+	enum ERenderCapsScore
+	{
+	    ERenderCapsScore_Low 				= 0,
+	    ERenderCapsScore_Medium			= 1,
+	    ERenderCapsScore_High				= 2,
+	    ERenderCapsScore_VeryHigh		= 3,
+	    ERenderCapsScore_UltraHigh	=	4,
+	    ERenderCapsScore_MaxCnt
+	};
+-->
+<gpu_db>
+
+	<!-- 
+			 This table is used to lower the rating of a gpu based on it's memory. 
+			 We first get the GPU rating by using the vendor and model id. 
+			 Then based on the rating, we will get the right node <gpu_rating> from the table below.
+			 Ex; You have a very high rated gpu. We will take the <gpu_rating value="3"> node. If your GPU has more then 640 you are okay.
+			 If you have between 320 and 640 Mb your gpu rating will go down to high. If your GPU has between 256 and 320, it's rating will go down to medium. Etc.
+	-->
+	<gpu_memory_rating>
+		<gpu_rating value="0">
+		</gpu_rating>
+		<gpu_rating value="1">
+			<low 			value="256"/>
+		</gpu_rating>
+		<gpu_rating value="2">
+			<low 			value="256"/>
+			<medium 	value="320"/>
+		</gpu_rating>
+		<gpu_rating value="3">
+			<low 			value="256"/>
+			<medium 	value="320"/>
+			<high 		value="640"/>
+		</gpu_rating>
+	</gpu_memory_rating>
+
+	<vendor id="0x10DE" name="NVIDIA">
+		<model id="0x014F" rating="0" name="GeForce 6200"/>
+		<model id="0x00F3" rating="0" name="GeForce 6200"/>
+		<model id="0x0221" rating="0" name="GeForce 6200"/>
+		<model id="0x0163" rating="0" name="GeForce 6200 LE"/>
+		<model id="0x0162" rating="0" name="GeForce 6200SE TurboCache(TM)"/>
+		<model id="0x0161" rating="0" name="GeForce 6200 TurboCache(TM)"/>
+		<model id="0x0162" rating="0" name="GeForce 6200SE TurboCache(TM)"/>
+		<model id="0x0160" rating="0" name="GeForce 6500"/>
+		<model id="0x0141" rating="0" name="GeForce 6600"/>
+		<model id="0x00F2" rating="0" name="GeForce 6600"/>
+		<model id="0x0140" rating="0" name="GeForce 6600 GT"/>
+		<model id="0x00F1" rating="0" name="GeForce 6600 GT"/>
+		<model id="0x0142" rating="0" name="GeForce 6600 LE"/>
+		<model id="0x00F4" rating="0" name="GeForce 6600 LE"/>
+		<model id="0x0143" rating="0" name="GeForce 6600 VE"/>
+		<model id="0x0147" rating="0" name="GeForce 6700 XL"/>
+		<model id="0x0041" rating="0" name="GeForce 6800"/>
+		<model id="0x00C1" rating="0" name="GeForce 6800"/>
+		<model id="0x0047" rating="0" name="GeForce 6800 GS"/>
+		<model id="0x00F6" rating="0" name="GeForce 6800 GS"/>
+		<model id="0x00C0" rating="0" name="GeForce 6800 GS"/>
+		<model id="0x0045" rating="0" name="GeForce 6800 GT"/>
+		<model id="0x00F9" rating="0" name="GeForce 6800 Series GPU"/>
+		<model id="0x00C2" rating="0" name="GeForce 6800 LE"/>
+		<model id="0x0040" rating="0" name="GeForce 6800 Ultra"/>
+		<model id="0x00F9" rating="0" name="GeForce 6800 Series GPU"/>
+		<model id="0x0043" rating="0" name="GeForce 6800 XE"/>
+		<model id="0x0048" rating="0" name="GeForce 6800 XT"/>
+		<model id="0x0218" rating="0" name="GeForce 6800 XT"/>
+		<model id="0x00C3" rating="0" name="GeForce 6800 XT"/>
+		<model id="0x01DF" rating="0" name="GeForce 7300 GS"/>
+		<model id="0x0393" rating="0" name="GeForce 7300 GT"/>
+		<model id="0x01D1" rating="0" name="GeForce 7300 LE"/>
+		<model id="0x01D3" rating="0" name="GeForce 7300 SE"/>
+		<model id="0x01DD" rating="0" name="GeForce 7500 LE"/>
+		<model id="0x0392" rating="0" name="GeForce 7600 GS"/>
+		<model id="0x0392" rating="0" name="GeForce 7600 GS"/>
+		<model id="0x02E1" rating="0" name="GeForce 7600 GS"/>
+		<model id="0x0391" rating="0" name="GeForce 7600 GT"/>
+		<model id="0x0394" rating="0" name="GeForce 7600 LE"/>
+		<model id="0x00F5" rating="1" name="GeForce 7800 GS"/>
+		<model id="0x0092" rating="1" name="GeForce 7800 GT"/>
+		<model id="0x0091" rating="1" name="GeForce 7800 GTX"/>
+		<model id="0x0291" rating="1" name="GeForce 7900 GT/GTO"/>
+		<model id="0x0290" rating="1" name="GeForce 7900 GTX"/>
+		<model id="0x0293" rating="1" name="GeForce 7900 GX2"/>
+		<model id="0x0294" rating="2" name="GeForce 7950 GX2"/>
+		<model id="0x0322" rating="0" name="GeForce FX 5200"/>
+		<model id="0x0321" rating="0" name="GeForce FX 5200 Ultra"/>
+		<model id="0x0323" rating="0" name="GeForce FX 5200LE"/>
+		<model id="0x0326" rating="0" name="GeForce FX 5500"/>
+		<model id="0x0326" rating="0" name="GeForce FX 5500"/>
+		<model id="0x0312" rating="0" name="GeForce FX 5600"/>
+		<model id="0x0311" rating="0" name="GeForce FX 5600 Ultra"/>
+		<model id="0x0314" rating="0" name="GeForce FX 5600XT"/>
+		<model id="0x0342" rating="0" name="GeForce FX 5700"/>
+		<model id="0x0341" rating="0" name="GeForce FX 5700 Ultra"/>
+		<model id="0x0343" rating="0" name="GeForce FX 5700LE"/>
+		<model id="0x0344" rating="0" name="GeForce FX 5700VE"/>
+		<model id="0x0302" rating="0" name="GeForce FX 5800"/>
+		<model id="0x0301" rating="0" name="GeForce FX 5800 Ultra"/>
+		<model id="0x0331" rating="0" name="GeForce FX 5900"/>
+		<model id="0x0330" rating="0" name="GeForce FX 5900 Ultra"/>
+		<model id="0x0333" rating="0" name="GeForce FX 5950 Ultra"/>
+		<model id="0x0324" rating="0" name="GeForce FX Go5200 64M"/>
+		<model id="0x031A" rating="0" name="GeForce FX Go5600"/>
+		<model id="0x0347" rating="0" name="GeForce FX Go5700"/>
+		<model id="0x0167" rating="0" name="GeForce Go 6200/6400"/>
+		<model id="0x0168" rating="0" name="GeForce Go 6200/6400"/>
+		<model id="0x0148" rating="0" name="GeForce Go 6600"/>
+		<model id="0x00c8" rating="0" name="GeForce Go 6800"/>
+		<model id="0x00c9" rating="0" name="GeForce Go 6800 Ultra"/>
+		<model id="0x0098" rating="1" name="GeForce Go 7800"/>
+		<model id="0x0099" rating="1" name="GeForce Go 7800 GTX"/>
+		<model id="0x0298" rating="1" name="GeForce Go 7900 GS"/>
+		<model id="0x0299" rating="1" name="GeForce Go 7900 GTX"/>
+		<model id="0x0185" rating="0" name="GeForce MX 4000"/>
+		<model id="0x00FA" rating="0" name="GeForce PCX 5750"/>
+		<model id="0x00FB" rating="0" name="GeForce PCX 5900"/>
+		<model id="0x0110" rating="0" name="GeForce2 MX/MX 400"/>
+		<model id="0x0111" rating="0" name="GeForce2 MX200"/>
+		<model id="0x0110" rating="0" name="GeForce2 MX/MX 400"/>
+		<model id="0x0200" rating="0" name="GeForce3"/>
+		<model id="0x0201" rating="0" name="GeForce3 Ti200"/>
+		<model id="0x0202" rating="0" name="GeForce3 Ti500"/>
+		<model id="0x0172" rating="0" name="GeForce4 MX 420"/>
+		<model id="0x0171" rating="0" name="GeForce4 MX 440"/>
+		<model id="0x0181" rating="0" name="GeForce4 MX 440 with AGP8X"/>
+		<model id="0x0173" rating="0" name="GeForce4 MX 440-SE"/>
+		<model id="0x0170" rating="0" name="GeForce4 MX 460"/>
+		<model id="0x0253" rating="0" name="GeForce4 Ti 4200"/>
+		<model id="0x0281" rating="0" name="GeForce4 Ti 4200 with AGP8X"/>
+		<model id="0x0251" rating="0" name="GeForce4 Ti 4400"/>
+		<model id="0x0250" rating="0" name="GeForce4 Ti 4600"/>
+		<model id="0x0280" rating="0" name="GeForce4 Ti 4800"/>
+		<model id="0x0282" rating="0" name="GeForce4 Ti 4800SE"/>
+		<model id="0x0203" rating="0" name="Quadro DCC"/>
+		<model id="0x0309" rating="0" name="Quadro FX 1000"/>
+		<model id="0x034E" rating="0" name="Quadro FX 1100"/>
+		<model id="0x00FE" rating="0" name="Quadro FX 1300"/>
+		<model id="0x00CE" rating="0" name="Quadro FX 1400"/>
+		<model id="0x0308" rating="0" name="Quadro FX 2000"/>
+		<model id="0x0338" rating="0" name="Quadro FX 3000"/>
+		<model id="0x00FD" rating="0" name="Quadro PCI-E Series"/>
+		<model id="0x00F8" rating="0" name="Quadro FX 3400/4400"/>
+		<model id="0x00CD" rating="0" name="Quadro FX 3450/4000 SDI"/>
+		<model id="0x004E" rating="0" name="Quadro FX 4000"/>
+		<model id="0x00CD" rating="0" name="Quadro FX 3450/4000 SDI"/>
+		<model id="0x00F8" rating="0" name="Quadro FX 3400/4400"/>
+		<model id="0x009D" rating="0" name="Quadro FX 4500"/>
+		<model id="0x029F" rating="0" name="Quadro FX 4500 X2"/>
+		<model id="0x032B" rating="0" name="Quadro FX 500/FX 600"/>
+		<model id="0x014E" rating="0" name="Quadro FX 540"/>
+		<model id="0x014C" rating="0" name="Quadro FX 540 MXM"/>
+		<model id="0x032B" rating="0" name="Quadro FX 500/FX 600"/>
+		<model id="0X033F" rating="0" name="Quadro FX 700"/>
+		<model id="0x034C" rating="0" name="Quadro FX Go1000"/>
+		<model id="0x00CC" rating="0" name="Quadro FX Go1400"/>
+		<model id="0x031C" rating="0" name="Quadro FX Go700"/>
+		<model id="0x018A" rating="0" name="Quadro NVS with AGP8X"/>
+		<model id="0x032A" rating="0" name="Quadro NVS 280 PCI"/>
+		<model id="0x00FD" rating="0" name="Quadro PCI-E Series"/>
+		<model id="0x0165" rating="0" name="Quadro NVS 285"/>
+		<model id="0x017A" rating="0" name="Quadro NVS"/>
+		<model id="0x018A" rating="0" name="Quadro NVS with AGP8X"/>
+		<model id="0x0113" rating="0" name="Quadro2 MXR/EX"/>
+		<model id="0x017A" rating="0" name="Quadro NVS"/>
+		<model id="0x018B" rating="0" name="Quadro4 380 XGL"/>
+		<model id="0x0178" rating="0" name="Quadro4 550 XGL"/>
+		<model id="0x0188" rating="0" name="Quadro4 580 XGL"/>
+		<model id="0x025B" rating="0" name="Quadro4 700 XGL"/>
+		<model id="0x0259" rating="0" name="Quadro4 750 XGL"/>
+		<model id="0x0258" rating="0" name="Quadro4 900 XGL"/>
+		<model id="0x0288" rating="0" name="Quadro4 980 XGL"/>
+		<model id="0x028C" rating="0" name="Quadro4 Go700"/>
+		<model id="0x0295" rating="1" name="NVIDIA GeForce 7950 GT"/>
+		<model id="0x03D0" rating="0" name="NVIDIA GeForce 6100 nForce 430"/>
+		<model id="0x03D1" rating="0" name="NVIDIA GeForce 6100 nForce 405"/>
+		<model id="0x03D2" rating="0" name="NVIDIA GeForce 6100 nForce 400"/>
+		<model id="0x0241" rating="0" name="NVIDIA GeForce 6150 LE"/>
+		<model id="0x0242" rating="0" name="NVIDIA GeForce 6100"/>
+		<model id="0x0245" rating="0" name="NVIDIA Quadro NVS 210S / NVIDIA GeForce 6150LE"/>
+		<model id="0x029C" rating="0" name="NVIDIA Quadro FX 5500"/>
+		<model id="0x0611" rating="3" name="NVIDIA GeForce 8800 GT"/>
+		<model id="0x0191" rating="3" name="NVIDIA GeForce 8800 GTX"/>
+		<model id="0x0193" rating="2" name="NVIDIA GeForce 8800 GTS"/>
+		<model id="0x0194" rating="3" name="NVIDIA GeForce 8800 Ultra"/>
+		<model id="0x0400" rating="1" name="NVIDIA GeForce 8600 GTS"/>
+		<model id="0x0402" rating="1" name="NVIDIA GeForce 8600 GT"/>
+		<model id="0x0421" rating="0" name="NVIDIA GeForce 8500 GT"/>
+		<model id="0x0422" rating="0" name="NVIDIA GeForce 8400 GS"/>
+		<model id="0x0423" rating="0" name="NVIDIA GeForce 8300 GS"/>
+	</vendor>
+	
+	<vendor id="0x1002" name="ATI">
+		<model id="0x724E" rating="0" name="AMD Stream Processor"/>
+		<model id="0x726E" rating="0" name="AMD Stream Processor Secondary"/>
+		<model id="0x4154" rating="0" name="ATI FireGL T2"/>
+		<model id="0x4174" rating="0" name="ATI FireGL T2 Secondary"/>
+		<model id="0x5B64" rating="0" name="ATI FireGL V3100"/>
+		<model id="0x5B74" rating="0" name="ATI FireGL V3100 Secondary"/>
+		<model id="0x3E54" rating="0" name="ATI FireGL V3200"/>
+		<model id="0x3E74" rating="0" name="ATI FireGL V3200 Secondary"/>
+		<model id="0x7152" rating="0" name="ATI FireGL V3300"/>
+		<model id="0x7172" rating="0" name="ATI FireGL V3300 Secondary"/>
+		<model id="0x7153" rating="0" name="ATI FireGL V3350"/>
+		<model id="0x7173" rating="0" name="ATI FireGL V3350 Secondary"/>
+		<model id="0x71D2" rating="0" name="ATI FireGL V3400"/>
+		<model id="0x71F2" rating="0" name="ATI FireGL V3400 Secondary"/>
+		<model id="0x958D" rating="0" name="ATI FireGL V3600"/>
+		<model id="0x5E48" rating="0" name="ATI FireGL V5000"/>
+		<model id="0x5E68" rating="0" name="ATI FireGL V5000 Secondary"/>
+		<model id="0x5551" rating="0" name="ATI FireGL V5100"/>
+		<model id="0x5571" rating="0" name="ATI FireGL V5100 Secondary"/>
+		<model id="0x71DA" rating="0" name="ATI FireGL V5200"/>
+		<model id="0x71FA" rating="0" name="ATI FireGL V5200 Secondary"/>
+		<model id="0x958C" rating="0" name="ATI FireGL V5600"/>
+		<model id="0x5550" rating="0" name="ATI FireGL V7100"/>
+		<model id="0x5570" rating="0" name="ATI FireGL V7100 Secondary"/>
+		<model id="0x7104" rating="0" name="ATI FireGL V7200"/>
+		<model id="0x7124" rating="0" name="ATI FireGL V7200 Secondary"/>
+		<model id="0x710E" rating="0" name="ATI FireGL V7300"/>
+		<model id="0x712E" rating="0" name="ATI FireGL V7300 Secondary"/>
+		<model id="0x710F" rating="0" name="ATI FireGL V7350"/>
+		<model id="0x712F" rating="0" name="ATI FireGL V7350 Secondary"/>
+		<model id="0x940F" rating="0" name="ATI FireGL V7600"/>
+		<model id="0x940B" rating="0" name="ATI FireGL V8600"/>
+		<model id="0x940A" rating="0" name="ATI FireGL V8650"/>
+		<model id="0x4E47" rating="0" name="ATI FireGL X1"/>
+		<model id="0x4E67" rating="0" name="ATI FireGL X1 Secondary"/>
+		<model id="0x4E4B" rating="0" name="ATI FireGL X2-256/X2-256t"/>
+		<model id="0x4E6B" rating="0" name="ATI FireGL X2-256/X2-256t Secondary"/>
+		<model id="0x4A4D" rating="0" name="ATI FireGL X3-256"/>
+		<model id="0x4A6D" rating="0" name="ATI FireGL X3-256 Secondary"/>
+		<model id="0x4147" rating="0" name="ATI FireGL Z1"/>
+		<model id="0x4167" rating="0" name="ATI FireGL Z1 Secondary"/>
+		<model id="0x5B65" rating="0" name="ATI FireMV 2200"/>
+		<model id="0x5B75" rating="0" name="ATI FireMV 2200 Secondary"/>
+		<model id="0x719B" rating="0" name="ATI FireMV 2250"/>
+		<model id="0x71BB" rating="0" name="ATI FireMV 2250 Secondary"/>
+		<model id="0x3151" rating="0" name="ATI FireMV 2400"/>
+		<model id="0x3171" rating="0" name="ATI FireMV 2400 Secondary"/>
+		<model id="0x5653" rating="0" name="ATI MOBILITY/RADEON X700"/>
+		<model id="0x5673" rating="0" name="ATI MOBILITY/RADEON X700 Secondary"/>
+		<model id="0x4E54" rating="0" name="ATI MOBILITY FIRE GL T2/T2e"/>
+		<model id="0x5464" rating="0" name="ATI MOBILITY FireGL V3100"/>
+		<model id="0x3154" rating="0" name="ATI MOBILITY FireGL V3200"/>
+		<model id="0x564A" rating="0" name="ATI MOBILITY FireGL V5000"/>
+		<model id="0x564B" rating="0" name="ATI MOBILITY FireGL V5000"/>
+		<model id="0x5D49" rating="0" name="ATI MOBILITY FireGL V5100"/>
+		<model id="0x71C4" rating="0" name="ATI MOBILITY FireGL V5200"/>
+		<model id="0x71D4" rating="0" name="ATI MOBILITY FireGL V5250"/>
+		<model id="0x7106" rating="0" name="ATI MOBILITY FireGL V7100"/>
+		<model id="0x7103" rating="0" name="ATI MOBILITY FireGL V7200"/>
+		<model id="0x4E52" rating="0" name="ATI MOBILITY RADEON 9500"/>
+		<model id="0x4E56" rating="0" name="ATI MOBILITY RADEON 9550"/>
+		<model id="0x4E50" rating="0" name="ATI MOBILITY RADEON 9600/9700 Series"/>
+		<model id="0x4A4E" rating="0" name="ATI MOBILITY RADEON 9800"/>
+		<model id="0x7210" rating="0" name="ATI MOBILITY RADEON HD 2300"/>
+		<model id="0x7211" rating="0" name="ATI MOBILITY RADEON HD 2300"/>
+		<model id="0x94C9" rating="0" name="ATI MOBILITY RADEON HD 2400"/>
+		<model id="0x94C8" rating="0" name="ATI MOBILITY RADEON HD 2400 XT"/>
+		<model id="0x9581" rating="0" name="ATI MOBILITY RADEON HD 2600"/>
+		<model id="0x9583" rating="0" name="ATI MOBILITY RADEON HD 2600 XT"/>
+		<model id="0x7149" rating="0" name="ATI MOBILITY RADEON X1300"/>
+		<model id="0x714A" rating="0" name="ATI MOBILITY RADEON X1300"/>
+		<model id="0x714B" rating="0" name="ATI MOBILITY RADEON X1300"/>
+		<model id="0x714C" rating="0" name="ATI MOBILITY RADEON X1300"/>
+		<model id="0x718B" rating="0" name="ATI MOBILITY RADEON X1350"/>
+		<model id="0x718C" rating="0" name="ATI MOBILITY RADEON X1350"/>
+		<model id="0x7196" rating="0" name="ATI MOBILITY RADEON X1350"/>
+		<model id="0x7145" rating="0" name="ATI MOBILITY RADEON X1400"/>
+		<model id="0x7186" rating="0" name="ATI MOBILITY RADEON X1450"/>
+		<model id="0x718D" rating="0" name="ATI MOBILITY RADEON X1450"/>
+		<model id="0x71C5" rating="0" name="ATI MOBILITY RADEON X1600"/>
+		<model id="0x71D5" rating="0" name="ATI MOBILITY RADEON X1700"/>
+		<model id="0x71DE" rating="0" name="ATI MOBILITY RADEON X1700"/>
+		<model id="0x71D6" rating="0" name="ATI MOBILITY RADEON X1700 XT"/>
+		<model id="0x7102" rating="0" name="ATI MOBILITY RADEON X1800"/>
+		<model id="0x7101" rating="0" name="ATI MOBILITY RADEON X1800 XT"/>
+		<model id="0x7284" rating="1" name="ATI MOBILITY RADEON X1900"/>
+		<model id="0x718A" rating="1" name="ATI MOBILITY RADEON X2300"/>
+		<model id="0x7188" rating="1" name="ATI MOBILITY RADEON X2300"/>
+		<model id="0x5460" rating="0" name="ATI MOBILITY RADEON X300"/>
+		<model id="0x3152" rating="0" name="ATI MOBILITY RADEON X300"/>
+		<model id="0x5461" rating="0" name="ATI MOBILITY RADEON X300"/>
+		<model id="0x3150" rating="0" name="ATI MOBILITY RADEON X600"/>
+		<model id="0x5462" rating="0" name="ATI MOBILITY RADEON X600 SE"/>
+		<model id="0x5652" rating="0" name="ATI MOBILITY RADEON X700"/>
+		<model id="0x5653" rating="0" name="ATI MOBILITY RADEON X700"/>
+		<model id="0x5D4A" rating="0" name="ATI MOBILITY RADEON X800"/>
+		<model id="0x5D48" rating="0" name="ATI MOBILITY RADEON X800 XT"/>
+		<model id="0x7109" rating="0" name="ATI RADEON  X1800 CrossFire Edition"/>
+		<model id="0x7129" rating="0" name="ATI RADEON  X1800 CrossFire EditionSecondary"/>
+		<model id="0x7249" rating="1" name="ATI RADEON  X1900 CrossFire Edition"/>
+		<model id="0x7269" rating="1" name="ATI RADEON  X1900 CrossFire EditionSecondary"/>
+		<model id="0x7240" rating="1" name="ATI RADEON  X1950 CrossFire Edition"/>
+		<model id="0x7260" rating="1" name="ATI RADEON  X1950 CrossFire EditionSecondary"/>
+		<model id="0x7248" rating="2" name="ATI RADEON  X1950 XTX Uber - Limited Edition"/>
+		<model id="0x7268" rating="1" name="ATI RADEON  X1950 Uber - Limited EditionSecondary"/>
+		<model id="0x554D" rating="0" name="ATI  RADEON  X800 CrossFire Edition"/>
+		<model id="0x556D" rating="0" name="ATI  RADEON  X800 CrossFire EditionSecondary"/>
+		<model id="0x5D52" rating="1" name="ATI  RADEON  X850 CrossFire Edition"/>
+		<model id="0x5D72" rating="1" name="ATI  RADEON  X850 CrossFire EditionSecondary"/>
+		<model id="0x564F" rating="0" name="ATI  RADEON  X550/X700 Series"/>
+		<model id="0x564F" rating="0" name="ATI  RADEON  X700 Series"/>
+		<model id="0x566F" rating="0" name="ATI  RADEON  X700 SeriesSecondary"/>
+		<model id="0x4153" rating="0" name="ATI  RADEON  9550/X1050 Series"/>
+		<model id="0x4173" rating="0" name="ATI  RADEON  9550/X1050 SeriesSecondary"/>
+		<model id="0x4150" rating="0" name="ATI  RADEON  9600 Series"/>
+		<model id="0x4152" rating="0" name="ATI  RADEON  9600 Series "/>
+		<model id="0x4151" rating="0" name="ATI  RADEON  9600 Series "/>
+		<model id="0x4E51" rating="0" name="ATI  RADEON  9600 Series "/>
+		<model id="0x4155" rating="0" name="ATI  RADEON  9600 Series "/>
+		<model id="0x4171" rating="0" name="ATI  RADEON  9600 SeriesSecondary"/>
+		<model id="0x4170" rating="0" name="ATI  RADEON  9600 SeriesSecondary "/>
+		<model id="0x4172" rating="0" name="ATI  RADEON  9600 SeriesSecondary "/>
+		<model id="0x4E71" rating="0" name="ATI  RADEON  9600 SeriesSecondary "/>
+		<model id="0x4175" rating="0" name="ATI  RADEON  9600 SeriesSecondary "/>
+		<model id="0x94CB" rating="0" name="ATI  RADEON  E2400"/>
+		<model id="0x94C7" rating="0" name="ATI  RADEON  HD 2350"/>
+		<model id="0x94C5" rating="0" name="ATI  RADEON  HD 2400 LE"/>
+		<model id="0x94C3" rating="0" name="ATI  RADEON  HD 2400 PRO"/>
+		<model id="0x94C4" rating="0" name="ATI  RADEON  HD 2400 PRO AGP"/>
+		<model id="0x94C1" rating="0" name="ATI  RADEON  HD 2400 XT"/>
+		<model id="0x958E" rating="0" name="ATI  RADEON  HD 2600 LE"/>
+		<model id="0x9589" rating="0" name="ATI  RADEON  HD 2600 Pro"/>
+		<model id="0x9587" rating="0" name="ATI  RADEON  HD 2600 Pro AGP"/>
+		<model id="0x9588" rating="0" name="ATI  RADEON  HD 2600 XT"/>
+		<model id="0x9586" rating="0" name="ATI  RADEON  HD 2600 XT AGP"/>
+		<model id="0x9405" rating="2" name="ATI  RADEON  HD 2900 GT"/>
+		<model id="0x9403" rating="2" name="ATI  RADEON  HD 2900 PRO"/>
+		<model id="0x9400" rating="2" name="ATI  RADEON  HD 2900 XT"/>
+		<model id="0x9401" rating="2" name="ATI  RADEON  HD 2900 XT"/>
+		<model id="0x9402" rating="2" name="ATI  RADEON  HD 2900 XT"/>
+		<model id="0x9505" rating="1" name="ATI  RADEON  HD 3850"/>
+		<model id="0x9501" rating="2" name="ATI  RADEON  HD 3870"/>
+		<model id="0x791E" rating="0" name="ATI  RADEON  X1200 Series"/>
+		<model id="0x791F" rating="0" name="ATI  RADEON  X1200 Series"/>
+		<model id="0x7288" rating="1" name="ATI  RADEON  X1950 GT"/>
+		<model id="0x72A8" rating="1" name="ATI  RADEON  X1950 GTSecondary"/>
+		<model id="0x5E4B" rating="0" name="ATI  RADEON  X700 PRO"/>
+		<model id="0x5E4A" rating="0" name="ATI  RADEON  X700 XT"/>
+		<model id="0x5E6A" rating="0" name="ATI  RADEON  X700 XTSecondary"/>
+		<model id="0x554B" rating="0" name="ATI  RADEON  X800 GT"/>
+		<model id="0x5D4E" rating="0" name="ATI  RADEON  X800 GT"/>
+		<model id="0x554E" rating="0" name="ATI  RADEON  X800 GT"/>
+		<model id="0x556B" rating="0" name="ATI  RADEON  X800 GTSecondary"/>
+		<model id="0x5D6E" rating="0" name="ATI  RADEON  X800 GTSecondary"/>
+		<model id="0x556E" rating="0" name="ATI  RADEON  X800 GTSecondary"/>
+		<model id="0x554D" rating="0" name="ATI  RADEON  X800 XL"/>
+		<model id="0x556D" rating="0" name="ATI  RADEON  X800 XLSecondary"/>
+		<model id="0x4B4B" rating="1" name="ATI  RADEON  X850 PRO"/>
+		<model id="0x4B6B" rating="1" name="ATI  RADEON  X850 PROSecondary"/>
+		<model id="0x4B4A" rating="1" name="ATI  RADEON  X850 SE"/>
+		<model id="0x4B6A" rating="1" name="ATI  RADEON  X850 SESecondary"/>
+		<model id="0x4B49" rating="1" name="ATI  RADEON  X850 XT"/>
+		<model id="0x4B4C" rating="1" name="ATI  RADEON  X850 XT Platinum Edition"/>
+		<model id="0x4B6C" rating="1" name="ATI  RADEON  X850 XT Platinum EditionSecondary"/>
+		<model id="0x4B69" rating="1" name="ATI  RADEON  X850 XTSecondary"/>
+		<model id="0x793F" rating="0" name="ATI  RADEON  Xpress 1200 Series"/>
+		<model id="0x7941" rating="0" name="ATI  RADEON  Xpress Series"/>
+		<model id="0x7942" rating="0" name="ATI  RADEON  Xpress 1200 Series"/>
+		<model id="0x5A61" rating="0" name="ATI  RADEON  Xpress Series"/>
+		<model id="0x5A63" rating="0" name="ATI  RADEON  Xpress Series"/>
+		<model id="0x5A62" rating="0" name="ATI  RADEON  Xpress Series"/>
+		<model id="0x5974" rating="0" name="ATI  RADEON  Xpress Series"/>
+		<model id="0x5874" rating="0" name="ATI  RADEON  Xpress Series"/>
+		<model id="0x5975" rating="0" name="ATI  RADEON  Xpress Series"/>
+		<model id="0x5A41" rating="0" name="ATI  RADEON  Xpress Series"/>
+		<model id="0x5A42" rating="0" name="ATI  RADEON  Xpress Series"/>
+		<model id="0x5954" rating="0" name="ATI  RADEON  Xpress Series"/>
+		<model id="0x5955" rating="0" name="ATI  RADEON  Xpress Series"/>
+		<model id="0x5A43" rating="0" name="ATI  RADEON  Xpress Series"/>
+		<model id="0x5854" rating="0" name="ATI  RADEON  Xpress Series"/>
+		<model id="0x958B" rating="0" name="Gemini ATI MOBILITY RADEON HD 2600 XT"/>
+		<model id="0x4144" rating="0" name="ATI RADEON 9500"/>
+		<model id="0x4149" rating="0" name="ATI RADEON 9500"/>
+		<model id="0x4E45" rating="0" name="ATI RADEON 9500 PRO/9700"/>
+		<model id="0x4E65" rating="0" name="ATI RADEON 9500 PRO/9700Secondary"/>
+		<model id="0x4164" rating="0" name="ATI RADEON 9500 Secondary"/>
+		<model id="0x4169" rating="0" name="ATI RADEON 9500 Secondary"/>
+		<model id="0x4E46" rating="0" name="ATI RADEON 9600 TX"/>
+		<model id="0x4E66" rating="0" name="ATI RADEON 9600 TXSecondary"/>
+		<model id="0x4146" rating="0" name="ATI RADEON 9600TX"/>
+		<model id="0x4166" rating="0" name="ATI RADEON 9600TXSecondary"/>
+		<model id="0x4E44" rating="0" name="ATI RADEON 9700 PRO"/>
+		<model id="0x4E64" rating="0" name="ATI RADEON 9700 PROSecondary"/>
+		<model id="0x4E49" rating="0" name="ATI RADEON 9800"/>
+		<model id="0x4E48" rating="0" name="ATI RADEON 9800 PRO"/>
+		<model id="0x4E68" rating="0" name="ATI RADEON 9800 PROSecondary"/>
+		<model id="0x4148" rating="0" name="ATI RADEON 9800 SE"/>
+		<model id="0x4168" rating="0" name="ATI RADEON 9800 SESecondary"/>
+		<model id="0x4E69" rating="0" name="ATI RADEON 9800Secondary"/>
+		<model id="0x4E4A" rating="0" name="ATI RADEON 9800 XT"/>
+		<model id="0x4E6A" rating="0" name="ATI RADEON 9800 XTSecondary"/>
+		<model id="0x7146" rating="0" name="ATI RADEON X1300/X1550 Series"/>
+		<model id="0x7166" rating="0" name="ATI RADEON X1300/X1550 SeriesSecondary"/>
+		<model id="0x714E" rating="0" name="ATI RADEON X1300 Series"/>
+		<model id="0x715E" rating="0" name="ATI RADEON X1300 Series"/>
+		<model id="0x714D" rating="0" name="ATI RADEON X1300 Series"/>
+		<model id="0x71C3" rating="0" name="ATI RADEON X1300 Series"/>
+		<model id="0x718F" rating="0" name="ATI RADEON X1300 Series"/>
+		<model id="0x716E" rating="0" name="ATI RADEON X1300 SeriesSecondary"/>
+		<model id="0x717E" rating="0" name="ATI RADEON X1300 SeriesSecondary"/>
+		<model id="0x716D" rating="0" name="ATI RADEON X1300 SeriesSecondary"/>
+		<model id="0x71E3" rating="0" name="ATI RADEON X1300 SeriesSecondary"/>
+		<model id="0x71AF" rating="0" name="ATI RADEON X1300 SeriesSecondary"/>
+		<model id="0x7142" rating="0" name="ATI RADEON X1300/X1550 Series"/>
+		<model id="0x7180" rating="0" name="ATI RADEON X1300/X1550 Series"/>
+		<model id="0x7183" rating="0" name="ATI RADEON X1300/X1550 Series"/>
+		<model id="0x7187" rating="0" name="ATI RADEON X1300/X1550 Series"/>
+		<model id="0x7162" rating="0" name="ATI RADEON X1300/X1550 SeriesSecondary"/>
+		<model id="0x71A0" rating="0" name="ATI RADEON X1300/X1550 SeriesSecondary"/>
+		<model id="0x71A3" rating="0" name="ATI RADEON X1300/X1550 SeriesSecondary"/>
+		<model id="0x71A7" rating="0" name="ATI RADEON X1300/X1550 SeriesSecondary"/>
+		<model id="0x719F" rating="0" name="ATI RADEON X1550 64-bit"/>
+		<model id="0x7147" rating="0" name="ATI RADEON X1550 64-bit"/>
+		<model id="0x715F" rating="0" name="ATI RADEON X1550 64-bit"/>
+		<model id="0x7167" rating="0" name="ATI RADEON X1550 64-bitSecondary"/>
+		<model id="0x717F" rating="0" name="ATI RADEON X1550 64-bitSecondary"/>
+		<model id="0x7193" rating="0" name="ATI RADEON X1550 Series"/>
+		<model id="0x7143" rating="0" name="ATI RADEON X1550"/>
+		<model id="0x71B3" rating="0" name="ATI RADEON X1550 SeriesSecondary"/>
+		<model id="0x7163" rating="0" name="ATI RADEON X1550 SeriesSecondary"/>
+		<model id="0x71CE" rating="0" name="ATI RADEON X1600 Pro/RADEON X1300 XT"/>
+		<model id="0x71EE" rating="0" name="ATI RADEON X1600 Pro/RADEON X1300 XTSecondary"/>
+		<model id="0x71C0" rating="0" name="ATI RADEON X1600 Series"/>
+		<model id="0x71C2" rating="0" name="ATI RADEON X1600 Series"/>
+		<model id="0x7140" rating="0" name="ATI RADEON X1600 Series"/>
+		<model id="0x71CD" rating="0" name="ATI RADEON X1600 Series"/>
+		<model id="0x7181" rating="0" name="ATI RADEON X1600 Series"/>
+		<model id="0x71E0" rating="0" name="ATI RADEON X1600 SeriesSecondary"/>
+		<model id="0x71E2" rating="0" name="ATI RADEON X1600 SeriesSecondary"/>
+		<model id="0x7160" rating="0" name="ATI RADEON X1600 SeriesSecondary"/>
+		<model id="0x71ED" rating="0" name="ATI RADEON X1600 SeriesSecondary"/>
+		<model id="0x71A1" rating="0" name="ATI RADEON X1600 SeriesSecondary"/>
+		<model id="0x71C6" rating="0" name="ATI RADEON X1650 Series"/>
+		<model id="0x7291" rating="0" name="ATI RADEON X1650 Series"/>
+		<model id="0x7293" rating="0" name="ATI RADEON X1650 Series"/>
+		<model id="0x71C1" rating="0" name="ATI RADEON X1650 Series"/>
+		<model id="0x71C7" rating="0" name="ATI RADEON X1650 Series"/>
+		<model id="0x71E6" rating="0" name="ATI RADEON X1650 SeriesSecondary"/>
+		<model id="0x72B1" rating="0" name="ATI RADEON X1650 SeriesSecondary"/>
+		<model id="0x72B3" rating="0" name="ATI RADEON X1650 SeriesSecondary"/>
+		<model id="0x71E1" rating="0" name="ATI RADEON X1650 SeriesSecondary"/>
+		<model id="0x71E7" rating="0" name="ATI RADEON X1650 SeriesSecondary"/>
+		<model id="0x7105" rating="1" name="ATI RADEON X1800 Series"/>
+		<model id="0x7108" rating="1" name="ATI RADEON X1800 Series"/>
+		<model id="0x7109" rating="1" name="ATI RADEON X1800 Series"/>
+		<model id="0x710A" rating="1" name="ATI RADEON X1800 Series"/>
+		<model id="0x710B" rating="1" name="ATI RADEON X1800 Series"/>
+		<model id="0x710C" rating="1" name="ATI RADEON X1800 Series"/>
+		<model id="0x7100" rating="1" name="ATI RADEON X1800 Series"/>
+		<model id="0x7120" rating="1" name="ATI RADEON X1800 SeriesSecondary"/>
+		<model id="0x7125" rating="1" name="ATI RADEON X1800 SeriesSecondary"/>
+		<model id="0x7128" rating="1" name="ATI RADEON X1800 SeriesSecondary"/>
+		<model id="0x7129" rating="1" name="ATI RADEON X1800 SeriesSecondary"/>
+		<model id="0x712A" rating="1" name="ATI RADEON X1800 SeriesSecondary"/>
+		<model id="0x712B" rating="1" name="ATI RADEON X1800 SeriesSecondary"/>
+		<model id="0x712C" rating="1" name="ATI RADEON X1800 SeriesSecondary"/>
+		<model id="0x7248" rating="1" name="ATI RADEON X1900 Series"/>
+		<model id="0x7249" rating="1" name="ATI RADEON X1900 Series"/>
+		<model id="0x724A" rating="1" name="ATI RADEON X1900 Series"/>
+		<model id="0x724B" rating="1" name="ATI RADEON X1900 Series"/>
+		<model id="0x724C" rating="1" name="ATI RADEON X1900 Series"/>
+		<model id="0x724D" rating="1" name="ATI RADEON X1900 Series"/>
+		<model id="0x724F" rating="1" name="ATI RADEON X1900 Series"/>
+		<model id="0x7243" rating="1" name="ATI RADEON X1900 Series"/>
+		<model id="0x7245" rating="1" name="ATI RADEON X1900 Series"/>
+		<model id="0x7246" rating="1" name="ATI RADEON X1900 Series"/>
+		<model id="0x7247" rating="1" name="ATI RADEON X1900 Series"/>
+		<model id="0x7268" rating="1" name="ATI RADEON X1900 SeriesSecondary"/>
+		<model id="0x7269" rating="1" name="ATI RADEON X1900 SeriesSecondary"/>
+		<model id="0x726A" rating="1" name="ATI RADEON X1900 SeriesSecondary"/>
+		<model id="0x726B" rating="1" name="ATI RADEON X1900 SeriesSecondary"/>
+		<model id="0x726C" rating="1" name="ATI RADEON X1900 SeriesSecondary"/>
+		<model id="0x726D" rating="1" name="ATI RADEON X1900 SeriesSecondary"/>
+		<model id="0x726F" rating="1" name="ATI RADEON X1900 SeriesSecondary"/>
+		<model id="0x7263" rating="1" name="ATI RADEON X1900 SeriesSecondary"/>
+		<model id="0x7265" rating="1" name="ATI RADEON X1900 SeriesSecondary"/>
+		<model id="0x7266" rating="1" name="ATI RADEON X1900 SeriesSecondary"/>
+		<model id="0x7267" rating="1" name="ATI RADEON X1900 SeriesSecondary"/>
+		<model id="0x7280" rating="1" name="ATI RADEON X1950 Series"/>
+		<model id="0x7240" rating="1" name="ATI RADEON X1950 Series"/>
+		<model id="0x7244" rating="1" name="ATI RADEON X1950 Series"/>
+		<model id="0x72A0" rating="1" name="ATI RADEON X1950 SeriesSecondary"/>
+		<model id="0x7260" rating="1" name="ATI RADEON X1950 SeriesSecondary"/>
+		<model id="0x7264" rating="1" name="ATI RADEON X1950 SeriesSecondary"/>
+		<model id="0x5B63" rating="0" name="ATI RADEON X300/X550/X1050 Series"/>
+		<model id="0x5B60" rating="0" name="ATI RADEON X300/X550/X1050 Series"/>
+		<model id="0x5B73" rating="0" name="ATI RADEON X300/X550/X1050 SeriesSecondary"/>
+		<model id="0x5B70" rating="0" name="ATI RADEON X300/X550/X1050 SeriesSecondary"/>
+		<model id="0x5657" rating="0" name="ATI RADEON X550/X700 Series"/>
+		<model id="0x5677" rating="0" name="ATI RADEON X550/X700 SeriesSecondary"/>
+		<model id="0x5B62" rating="0" name="ATI RADEON X600 Series"/>
+		<model id="0x5B72" rating="0" name="ATI RADEON X600 SeriesSecondary"/>
+		<model id="0x3E50" rating="0" name="ATI RADEON X600/X550 Series"/>
+		<model id="0x3E70" rating="0" name="ATI RADEON X600/X550 SeriesSecondary"/>
+		<model id="0x5E4D" rating="0" name="ATI RADEON X700"/>
+		<model id="0x5E6B" rating="0" name="ATI RADEON X700 PROSecondary"/>
+		<model id="0x5E4C" rating="0" name="ATI RADEON X700 SE"/>
+		<model id="0x5E6C" rating="0" name="ATI RADEON X700 SESecondary"/>
+		<model id="0x5E6D" rating="0" name="ATI RADEON X700Secondary"/>
+		<model id="0x5E4F" rating="0" name="ATI RADEON X700/X550 Series"/>
+		<model id="0x5E6F" rating="0" name="ATI RADEON X700/X550 SeriesSecondary"/>
+		<model id="0x5549" rating="0" name="ATI RADEON X800 GTO"/>
+		<model id="0x5D4F" rating="0" name="ATI RADEON X800 GTO"/>
+		<model id="0x554F" rating="0" name="ATI RADEON X800 GTO"/>
+		<model id="0x5569" rating="0" name="ATI RADEON X800 GTOSecondary"/>
+		<model id="0x5D6F" rating="0" name="ATI RADEON X800 GTOSecondary"/>
+		<model id="0x556F" rating="0" name="ATI RADEON X800 GTOSecondary"/>
+		<model id="0x4A49" rating="0" name="ATI RADEON X800 PRO"/>
+		<model id="0x4A69" rating="0" name="ATI RADEON X800 PROSecondary"/>
+		<model id="0x4A4F" rating="0" name="ATI RADEON X800 SE"/>
+		<model id="0x4A6F" rating="0" name="ATI RADEON X800 SESecondary"/>
+		<model id="0x4A48" rating="0" name="ATI RADEON X800 Series"/>
+		<model id="0x4A4A" rating="0" name="ATI RADEON X800 Series"/>
+		<model id="0x4A4C" rating="0" name="ATI RADEON X800 Series"/>
+		<model id="0x5548" rating="0" name="ATI RADEON X800 Series"/>
+		<model id="0x4A68" rating="0" name="ATI RADEON X800 SeriesSecondary"/>
+		<model id="0x4A6A" rating="0" name="ATI RADEON X800 SeriesSecondary"/>
+		<model id="0x4A6C" rating="0" name="ATI RADEON X800 SeriesSecondary"/>
+		<model id="0x5568" rating="0" name="ATI RADEON X800 SeriesSecondary"/>
+		<model id="0x4A54" rating="0" name="ATI RADEON X800 VE"/>
+		<model id="0x4A74" rating="0" name="ATI RADEON X800 VESecondary"/>
+		<model id="0x4A4B" rating="0" name="ATI RADEON X800 XT"/>
+		<model id="0x5D57" rating="0" name="ATI RADEON X800 XT"/>
+		<model id="0x554A" rating="0" name="ATI RADEON X800 XT Platinum Edition"/>
+		<model id="0x4A50" rating="0" name="ATI RADEON X800 XT Platinum Edition"/>
+		<model id="0x556A" rating="0" name="ATI RADEON X800 XT Platinum EditionSecondary"/>
+		<model id="0x4A70" rating="0" name="ATI RADEON X800 XT Platinum EditionSecondary"/>
+		<model id="0x4A6B" rating="0" name="ATI RADEON X800 XTSecondary"/>
+		<model id="0x5D77" rating="0" name="ATI RADEON X800 XTSecondary"/>
+		<model id="0x5D52" rating="1" name="ATI RADEON X850 XT"/>
+		<model id="0x5D4D" rating="1" name="ATI RADEON X850 XT Platinum Edition"/>
+		<model id="0x5D6D" rating="1" name="ATI RADEON X850 XT Platinum EditionSecondary"/>
+		<model id="0x5D72" rating="1" name="ATI RADEON X850 XTSecondary"/>
+	</vendor>
+</gpu_db>        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

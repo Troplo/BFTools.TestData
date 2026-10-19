@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<GPUPerfMonitor>
+    <JobGroup Name="GBuffer" Budget="6.0" Color="1,0,0,0.7" >
+        <Job Name="GBuffer*"/>
+    </JobGroup>
+    <JobGroup Name="DeferredLighting" Budget="8.0" Color="0,1,0,0.7" >
+        <Job Name="DeferredLighting*"/>
+    </JobGroup>
+    <JobGroup Name="Reflection" Budget="8.0" Color="0,0,1,0.7" >
+        <Job Name="Reflection_*"/>
+    </JobGroup>
+</GPUPerfMonitor>

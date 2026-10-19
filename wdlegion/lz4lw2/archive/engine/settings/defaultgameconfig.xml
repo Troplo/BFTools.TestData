@@ -1,0 +1,59 @@
+<Profile
+	Hour = "13"
+	Minutes = "30"
+	Seconds = "0"
+	TimeScale = "36"
+	WindForce = "80"
+	WindDir = "230"
+	DelayShadowMovement = "30"
+	GodMode = "0"
+	UnlimitedAmmo = "0"
+	Sensitivity_x = "1.0"
+	Sensitivity_y = "1.0"
+	Sensitivity = "0.9"
+	Invert_x = "0"
+	Invert_y = "0"
+	DefaultLoadingScreen = "UI\\fire\\bin\\Menu_Loading.feu"
+	DefaultPauseMenu = "UI\\fire\\bin\\Menu_Pause.feu"
+	FireMovieTest = "UI\\fire\\bin\\Menu_Pause.feu"
+	Gamepad_vibration = "1"
+	IgnorePlayer = "0"
+	GatherEntitiesForMap = "0"
+	ShowAIInMap = "0"
+	ShowDiamondsInMap = "0"
+    UseMouseSmooth = "0"
+    DifficultyLevel = "1"
+    Machete = "0"
+    UseAmbx = "0"
+    UseSubtitles = "1"    
+    padSensor = "0"
+    UseAimingHelpers = "1"
+    HelpCrosshair = "0"
+    BrightnessCalibrated = "0"
+	>
+	<FireConfig 
+		QualitySetting = "VeryHigh">
+		<Qualities>
+			<quality id="VeryHigh"
+				FireEnabled="1"
+    		MultiCellArraySize="100"
+    		FireSmokeEnabled="1"
+    		/>
+    	<quality id="High"
+				FireEnabled="1"
+    		MultiCellArraySize="100"
+    		FireSmokeEnabled="1"
+    		/>
+    	<quality id="Medium"
+				FireEnabled="1"
+    		MultiCellArraySize="100"
+    		FireSmokeEnabled="0"
+    		/>
+    	<quality id="Low"
+				FireEnabled="1"
+    		MultiCellArraySize="100"
+    		FireSmokeEnabled="0"
+    		/>
+    	</Qualities>
+  </FireConfig>
+</Profile>

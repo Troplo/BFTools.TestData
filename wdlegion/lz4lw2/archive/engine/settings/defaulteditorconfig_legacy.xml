@@ -1,0 +1,167 @@
+<config>
+	<paths>
+		<path id="Plugins" string="editor\plugins\" />
+	</paths>
+	<files>
+		<file id="MissionsDef" string="missions/missions.xml" />
+		<file id="MissionsDefMultiPlayer" string="missions/multiplayer.missions" />
+	</files>
+	<Settings>
+		<setting id="Language" string="english" />
+		<setting id="ObjectHideMask" string="0" />
+		<setting id="DisplayMode" string="2" />
+		<setting id="DebugFlags" string="0" />
+		<setting id="LabelsDistance" string="100" />
+		<setting id="SaveDialog" string="267" />
+		<setting id="TargetPlatform" string="5" />
+		<setting id="AlwaysShowRadiuses" string="1" />
+		<setting id="MoveSpeed" string="31" />
+		<setting id="MuteSound" string="0" />
+		<setting id="UseBarks" string="1" />
+		<setting id="PreviewGeometryWindow" string="1" />
+		<setting id="StartUp" string="1" />
+		<setting id="FilePos" string="45" />
+		<setting id="MaxNbBackups" string="10" />
+		<setting id="ResourcesAutoReload" string="1" />
+		<setting id="ResourcesAutoReloadDirs" string="graphics;engine/scripts;domino;Traffic;animations;UI/Fire/bin;UI/Fire/sources/textures;Music;aireactions;Missions;aLiveData" />
+		<setting id="UseAssetStatusDatabase" string="0" />
+		<setting id="AssetStatusDB_Database" string="fcx_asset" />
+		<setting id="AssetStatusDB_Host" string="jake.mtl.ubisoft.org" />
+		<setting id="AssetStatusDB_User" string="user" />
+		<setting id="AssetStatusDB_Password" string="82g278" />
+		<setting id="SkinsPath" string="editor\Skins\" />
+		<setting id="PopupLoadErrors" string="0" />
+		<setting id="SourceControlWarningNotLatest" string="0" />
+		<setting id="helpURL" string="\\Ubisoft.org\Projects\farcry_x\Public\NomadDoc\index.html" />
+		<setting id="MinWorldSize" string="512,512"/>
+		<setting id="MaxWorldSize" string="8192,8192" />
+		<setting id="MaterialEditorComplexity" string="100" />
+	</Settings>
+	<CollectionSystem>
+		<setting id="gridMinTileSize" string="1.0" />
+		<setting id="forceRegenerateOnExport" string="1" />
+	</CollectionSystem>
+	<SelectionHilight>
+		<setting id="intensity" string="1.0" />
+		<setting id="radius" string="10000.0" />
+		<setting id="speed" string="1.0" />
+		<setting id="red" string="1.0" />
+		<setting id="green" string="1.0" />
+		<setting id="blue" string="0.0" />
+	</SelectionHilight>
+	<GenericVisuals>
+		<setting id="Invalid" string="graphics\models\0x800000017f6c1c8a.model" />
+		<setting id="InvalidProxy" string="graphics\models\0x800000017f6c4215.model" />
+		<setting id="PlaneDeformGizmo" string="graphics\models\0x800000017f6c4216.model" />
+		<setting id="OffsetGizmo" string="graphics\models\0x800000017f6c4209.model" />
+		<setting id="Prefab" string="graphics\models\0x800000017f6c4217.model" />
+		<setting id="GIBox" string="graphics\models\0x800000017f6c4218.model" />
+		<setting id="AttractorLookAt" string="graphics\models\0x800000017f6c4219.model" />
+		<setting id="DetailMapPoint" string="graphics\models\0x800000017f6c41f9.model" />
+		<setting id="InteriorExit" string="graphics\models\0x800000017f6c421a.model" />
+		<setting id="NavHelper" string="graphics\models\0x800000017f6c421b.model" />
+		<setting id="RoadMorphing" string="graphics\models\0x800000017f6c421c.model" />
+		<setting id="IntersectionLight" string="" />
+		<setting id="IntersectionStop" string="" />
+	</GenericVisuals>
+	<EditorObjectSocketVisuals>
+		<setting id="Empty" string="graphics\models\0x80000001660a569e.model" />
+		<setting id="Invalid" string="graphics\models\0x80000001660a569d.model" />
+		<setting id="Valid" string="graphics\models\0x80000001660a569f.model" />
+	</EditorObjectSocketVisuals>
+	<EnticerVisuals>
+		<setting id="Group" string="graphics\models\0x800000017f6c421d.model" />
+		<setting id="Showcase" string="" />
+		<setting id="Regular" string="" />
+		<setting id="Vehicle" string="graphics\models\0x800000017f6c421e.model" />
+		<setting id="CarOnDemand" string="graphics\models\0x800000017f6c421f.model" />
+		<setting id="VehicleGroup" string="graphics\models\0x800000017f6c4220.model" />
+		<setting id="CLO_Filler_CIVIL" string="graphics\models\0x800000017f6c4221.model" />
+		<setting id="CLO_Filler_AI" string="graphics\models\0x800000017f6c4222.model" />
+		<setting id="CLO_ShowCase_CIVIL" string="graphics\models\0x800000017f6c4223.model" />
+		<setting id="CLO_ShowCase_AI" string="graphics\models\0x800000017f6c4224.model" />
+		<setting id="CLO_Attractor_Filler_CIVIL" string="graphics\models\0x800000017f6c4225.model" />
+		<setting id="CLO_Attractor_Filler_AI" string="graphics\models\0x800000017f6c4226.model" />
+		<setting id="CLO_Attractor_Showcase_CIVIL" string="graphics\models\0x800000017f6c4227.model" />
+		<setting id="CLO_Attractor_Showcase_AI" string="graphics\models\0x800000017f6c4228.model" />
+		<setting id="CLO_Attractor" string="graphics\models\0x800000017f6c4229.model" />
+		<setting id="CLO_Error" string="graphics\models\0x8000000168eb770f.model" />
+		<setting id="CLO_Animal_Spawner" string="graphics\models\0x800000019D3CD061.model" />
+		<setting id="CLO_Animal_Spawner_Attract" string="graphics\models\0x800000019D3CD060.model" />
+		<setting id="CLO_Animal_Attract" string="graphics\models\0x800000019D3CD05F.model" />
+		<setting id="CLO_Robot" string="graphics\Editor\0x8000000168EB7743.model" />
+		<setting id="CLO_Talker" string="graphics\Editor\0x80000001C783B793.model" />
+		<setting id="CLO_Object" string="graphics\Editor\0x80000001E5F5673B.model" />
+        <setting id="CLO_Drone" string="graphics\Editor\0x8000000168EB7743.model" />
+		<setting id="CLO_OpSwap_Player" string="graphics\Editor\0x8000000BE7498C88.model" />
+		<setting id="CLO_OpSwap_NPC" string="graphics\Editor\0x8000000BE7498C89.model" />
+        <setting id="Enticer_Group_Overriden" string="graphics\Editor\0x8000001A0F365D31.model" />
+        <setting id="Enticer_Group_Overriden_wAudio" string="graphics\Editor\0x8000001A0F365D32.model" />
+        <setting id="Enticer_Group_Overriden_wAudio_Miscellaneous" string="graphics\Editor\0x8000001A0F365D3E.model" />
+    </EnticerVisuals>
+    <PGTVisuals>
+        <setting id="PGT_Area" string="graphics\models\0x800000023A3A1F68.model" />
+        <setting id="DGO_Spawner" string="graphics\models\0x80000001A609B244.model" />
+        <setting id="DGO_Spawner02" string="graphics\models\0x800000044111427D.model" />
+        <setting id="DGO_Spawner03" string="graphics\models\0x800000044111427E.model" />
+        <setting id="DGO_Spawner04" string="graphics\models\0x800000044111427F.model" />
+        <setting id="DGO_Spawner05" string="graphics\models\0x8000000441114280.model" />
+        <setting id="DGO_Importer" string="graphics\models\0x80000001A609B245.model" />
+    </PGTVisuals>
+    <DGSceneVisuals>
+        <setting id="DGScene_Spawner" string="graphics\models\0x800000094B4D0C3B.model" />
+        <setting id="DGScene_Spawner02" string="graphics\models\0x800000094B4D0C3A.model" />
+        <setting id="DGScene_Spawner03" string="graphics\models\0x800000094B4D0C39.model" />
+        <setting id="DGScene_Spawner04" string="graphics\models\0x800000094B4D0C38.model" />
+        <setting id="DGScene_Spawner05" string="graphics\models\0x8000000441114280.model" />
+        <setting id="DGScene_Importer" string="graphics\models\0x800000094B4D0C3C.model" />
+        <setting id="DGScene_Human" string="graphics\models\0x8000000A0F45262D.model" />
+        <setting id="DGScene_Animal" string="graphics\models\0x8000000A0F45262F.model" />
+        <setting id="DGScene_Drone" string="graphics\models\0x8000000A0F452630.model" />
+        <setting id="DGScene_Object" string="graphics\models\0x8000000A0F452632.model" />
+        <setting id="DGScene_Robot" string="graphics\models\0x8000000A0F452631.model" />
+        <setting id="DGScene_Vehicle" string="graphics\models\0x8000000A0F45262E.model" />
+        <setting id="DGScene_AliveSmartPoint" string="graphics\models\0x8000000A0F452632.model" />
+        <setting id="DGScene_Group" string="graphics\models\0x8000000A0F452632.model" />
+        <setting id="DGScene_SpawnerGroup" string="graphics\models\0x8000000E18AA9CC6.model" />
+
+		<setting id="DGScene_DebugAnnotationText" string="graphics\models\0x8000000ACFC828B1.model" />
+    </DGSceneVisuals>
+    <LightVisuals>
+		<setting id="Omni" string="graphics\models\0x800000017f6c41fa.model" />
+		<setting id="Spot" string="graphics\models\0x800000017f6c420e.model" />
+		<setting id="ClipPlane" string="graphics\models\0x800000017f6c422a.model" />
+	</LightVisuals>
+	<BatchModelVisuals>
+		<setting id="CSoundPointBatchModel" string="graphics\models\0x800000017f6c3fec.model" />
+		<setting id="CDebrisSpawnerBatchModel" string="graphics\models\0x800000017f6c422b.model" />
+		<setting id="CBlackoutEffectBatchModel" string="graphics\models\0x800000017f6c420d.model" />
+		<setting id="CParticlesBatchModel" string="graphics\models\0x800000017f6c4201.model" />
+        <setting id="CConfettiBatchModel" string="graphics\models\0x800000017f6c4201.model" />
+        <setting id="CLocalCubeMapBatchModel_WithTextures" string="graphics\models\0x80000001997D0150.model" />
+        <setting id="CLocalCubeMapBatchModel" string="graphics\models\0x8000000241DA46A0.model" />
+        <setting id="CArchetypeBatchModel" string="" />
+		<setting id="CBuildingBatchModel" string="" />
+		<setting id="CPhysBatchModel" string="" />
+		<setting id="CGraphicBatchModel" string="" />
+		<setting id="CRealTreeBatchModel" string="" />
+		<setting id="CSimplePrimitiveBatchModel" string="" />
+	</BatchModelVisuals>
+	<ObjectStaticDataVisuals>
+		<setting id="CObjectStaticData" string="graphics\models\0x8000000168eb7710.model" />
+		<setting id="CPermanentBlackoutZoneData" string="graphics\models\0x800000017f6c422d.model" />
+		<setting id="CGPSPathHelperPointData" string="graphics\models\0x800000017f6c422e.model" />
+		<setting id="CMapIconData" string="graphics\models\0x800000017f6c422f.model" />
+		<setting id="CBuildingStaticData" string="graphics\models\0x800000017f6c4230.model" />
+		<setting id="CStationMetadata" string="graphics\models\0x800000017f6c4232.model" />
+		<setting id="CTaxiLocationData" string="graphics\models\0x800000017f6c422f.model" />
+		<setting id="CCourierLocationData" string="graphics\models\0x800000017f6c422f.model" />
+		<setting id="CFastTravelDestinationData" string="graphics\models\0x800000017f6c41f4.model" />
+    </ObjectStaticDataVisuals>
+	<SpheresGrid>
+		<setting id="mesh" string="graphics\models\0x800000017f6c4234.model" />
+	</SpheresGrid>
+	<GameModes>
+		<GameMode id="DriverCoop" string="1" />
+	</GameModes>
+</config>

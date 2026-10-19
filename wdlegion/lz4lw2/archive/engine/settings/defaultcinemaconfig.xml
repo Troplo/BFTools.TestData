@@ -1,0 +1,31 @@
+<Root>
+	<Platforms>
+		<Platform Name="win32">
+			<Mode Name="CurrentGen"/>
+		</Platform>
+		<Platform Name="win64">
+			<Mode Name="NextGen"/>
+		</Platform>
+		<Platform Name="xbox360">
+			<Mode Name="CurrentGen"/>
+		</Platform>
+		<Platform Name="xenon">
+			<Mode Name="CurrentGen"/>
+		</Platform>
+		<Platform Name="durango">
+			<Mode Name="NextGen"/>
+		</Platform>
+		<Platform Name="ps3">
+			<Mode Name="CurrentGen"/>
+		</Platform>
+		<Platform Name="orbis">
+			<Mode Name="NextGen"/>
+		</Platform>
+		<Platform Name="win64_current_gen">
+			<Mode Name="CurrentGen"/>
+		</Platform>
+		<Platform Name="yeti">
+			<Mode Name="NextGen"/>
+		</Platform>
+	</Platforms>
+</Root>

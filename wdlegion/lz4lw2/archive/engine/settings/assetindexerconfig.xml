@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<IndexerSettings GlobalVersion="7" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ListingDefinition>
+    <DirectoryDef SubDir="animations\" ThreadingDepth="0" />
+    <DirectoryDef SubDir="databases\" ThreadingDepth="0" />
+    <DirectoryDef SubDir="dialog\" ThreadingDepth="0" />
+    <DirectoryDef SubDir="domino\" ThreadingDepth="0" />
+    <DirectoryDef SubDir="editor\" ThreadingDepth="0" />
+    <DirectoryDef SubDir="engine\" ThreadingDepth="0" />
+    <DirectoryDef SubDir="graphics\" ThreadingDepth="5" />
+    <DirectoryDef SubDir="move\" ThreadingDepth="0" />
+    <DirectoryDef SubDir="sequences\" ThreadingDepth="0" />
+    <DirectoryDef SubDir="sound\" ThreadingDepth="0" />
+    <DirectoryDef SubDir="tools\" ThreadingDepth="0" />
+    <DirectoryDef SubDir="ui\" ThreadingDepth="0" />
+    <DirectoryDef SubDir="worlds\" ThreadingDepth="0" />
+  </ListingDefinition>
+  <IndexerTriggers>
+    <IndexerTrigger xsi:type="FileExtensionTrigger" Extension=".mac" Key="MarkupToAnim" />
+    <IndexerTrigger xsi:type="FileExtensionTrigger" Extension=".glm" Key="MetaToGlm" />
+    <IndexerTrigger xsi:type="FileExtensionTrigger" Extension=".hkr" Key="MetaToHkr" />
+  </IndexerTriggers>
+  <IndexerDefinition>
+    <ToIndex xsi:type="TextureToIndex"          Version="1" IsPreIndexed="false" IsWorldData="false" TopDirectoryOnly="false" Extensions=".png"         FolderPath="graphics;ui;editor" SmallMax="16384" MediumMax="393216" BigMax="4194304">
+        <Tags Domaine="graphic;fx"              Type="texture"          Editor="" Generic="resource"/>
+    </ToIndex>
+    <ToIndex xsi:type="GLMToIndex"              Version="1" TopDirectoryOnly="false" AssetType="geometry"              Extensions=".glm;.lft"      FolderPath="graphics" />
+    <ToIndex xsi:type="GamexToIndex"            Version="1" TopDirectoryOnly="false" AssetType="geometry"              Extensions=".gamex"         FolderPath="graphics" />
+    <ToIndex xsi:type="MaterialToIndex"         Version="1" TopDirectoryOnly="false" AssetType="material"              Extensions=".material.xml"  FolderPath="graphics" />
+    <ToIndex xsi:type="ResourceFileToIndex"     Version="1" TopDirectoryOnly="true"  AssetType="material descriptor"   Extensions=".xml"           FolderPath="engine\shaders\materialdescriptors" XmlInvokeDep="true" />
+  </IndexerDefinition>
+</IndexerSettings> 
+

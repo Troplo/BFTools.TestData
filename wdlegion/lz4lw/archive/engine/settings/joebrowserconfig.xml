@@ -1,0 +1,33 @@
+<AssetManagerConfig>
+    <IconConfig>
+        <Group Name="Type" DefaultIconResourceName="AssetManager_Archetypes_16">
+            <Icon Name="geometry" IconResourceName="AssetManager_Model_16" />
+            <Icon Name="archetype" IconResourceName="AssetManager_Archetypes_16" />
+            <Icon Name="prototype" IconResourceName="AssetManager_Archetypes_16" />
+            <Icon Name="physic" IconResourceName="Viewport_OnlyPhysics_16" />
+            <Icon Name="material" IconResourceName="AssetManager_Materials_16" />
+            <Icon Name="texture" IconResourceName="AssetManager_Textures_16" />
+            <Icon Name="realtree" IconResourceName="AssetManager_SpeedTree_16" />
+            <Icon Name="animation" IconResourceName="Misc_Animation_16" />
+            <Icon Name="markup" IconResourceName="Tools_MarkupView2_16" />
+            <Icon Name="move" IconResourceName="Tools_MoveEditor_16" />
+            <Icon Name="domino" IconResourceName="Tools_Blackbox2_16" />
+            <Icon Name="aiworkspace" IconResourceName="Tools_Blackbox2_16" />
+            <Icon Name="bbworkspace" IconResourceName="Tools_Blackbox2_16" />
+        </Group>
+      <!--
+        <Group Name="Domain" DefaultIconResourceName="">
+            <Icon Name="ai" IconResourceName="AssetManager_Model_16" />
+            <Icon Name="animation" IconResourceName="Misc_Animation_16" />
+            <Icon Name="fx" IconResourceName="Tools_MoveEditor_16" />
+            <Icon Name="gameplay" IconResourceName="AssetManager_Materials_16" />
+            <Icon Name="graphic" IconResourceName="AssetManager_Textures_16" />
+            <Icon Name="physic" IconResourceName="Viewport_OnlyPhysics_16" />
+            <Icon Name="programmer" IconResourceName="AssetManager_SpeedTree_16" />
+            <Icon Name="script" IconResourceName="Tools_Blackbox2_16" />
+            <Icon Name="sound" IconResourceName="Tools_MarkupView2_16" />
+            <Icon Name="undefined" IconResourceName="AssetManager_Archetypes_16" />
+        </Group>
+        -->
+    </IconConfig>
+</AssetManagerConfig>

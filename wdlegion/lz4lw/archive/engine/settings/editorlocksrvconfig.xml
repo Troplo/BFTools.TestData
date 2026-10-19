@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<LockServiceConfig requestService="tcp://msr-dis01.ubisoft.org:5556" publishService ="tcp://msr-dis01.ubisoft.org:5557"/>

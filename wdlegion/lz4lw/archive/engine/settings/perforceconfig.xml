@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<perforce bylauncher="false">
+  <instance port="1666" password="DuniaDemo" username="DuniaDemo">
+    <Clients>
+      <Client name="disrupt" type="data" />
+    </Clients>
+  </instance>
+</perforce>

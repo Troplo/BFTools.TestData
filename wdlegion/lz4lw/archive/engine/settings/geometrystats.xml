@@ -1,0 +1,11 @@
+<GeometryStats>
+	<Categories>
+		<Category Name="x-small"   SizeMax="0.5" DensityIdeal="100" DensityMax="400" DrawCallsIdeal="1" DrawCallsMax="1" />
+		<Category Name="small"     SizeMax="1"   DensityIdeal="75" DensityMax="200" DrawCallsIdeal="1" DrawCallsMax="2" />
+		<Category Name="medium"    SizeMax="2"   DensityIdeal="50" DensityMax="100" DrawCallsIdeal="1" DrawCallsMax="2" />
+		<Category Name="large"     SizeMax="4"   DensityIdeal="35" DensityMax="50" DrawCallsIdeal="2" DrawCallsMax="3" />
+		<Category Name="x-large"   SizeMax="8"   DensityIdeal="25" DensityMax="25" DrawCallsIdeal="2" DrawCallsMax="4" />
+		<Category Name="xx-large"  SizeMax="16"  DensityIdeal="10" DensityMax="12" DrawCallsIdeal="3" DrawCallsMax="4" />
+		<Category Name="xxx-large" SizeMax="100" DensityIdeal="5" DensityMax="6" DrawCallsIdeal="3" DrawCallsMax="4" />
+	</Categories>
+</GeometryStats>

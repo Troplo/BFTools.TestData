@@ -1,0 +1,215 @@
+
+<!--
+  HOW TO USE THIS FILE:
+
+  <Award
+    name - the name of the achievement / trophy, for debugging purposes
+    index - the platform index of the achievement / trophy to be awarded
+    uplay - optional, the uplay action index to be awarded
+
+  Conditions:
+  An award must have 1 or more conditions. When all of the conditions are met the achievement / trophy
+  will be awarded. Conditions must be based upon / contain 1 or more statistics. 
+  There are 3 types of conditions:
+  <Cumulative
+    count - The condition is met when all the statistics added together reach or exceed this value.
+  <Exact
+    count - The condition is met when all the statistics added together reach exactly this value.
+  <Event
+    The condition is if any of the statistics events are fired.
+  <MultiAnd
+    Must have 2 or more statistics. Each stat has a count value. The condition is met when ALL the stats reach or exceed their specified values.
+  <MultiOr
+    Must have 2 or more statistics. Each stat has a count value. The condition is met when ANY of the stats reach or exceed their specified value.
+  <MultiAndExact
+    Must have 2 or more statistics. Each stat has a count value. The condition is met when ALL the stats are equal to their specified values.
+  <MultiOrExact
+    Must have 2 or more statistics. Each stat has a count value. The condition is met when ANY of the stats are equal to their specified value.
+  <ContextCount
+    count - The condition is met when the stat has the specified number of contexts.
+  <ContextList
+    The condition is met when all stats exist in their context, or when we reach the optionally specified count, whichever comes first.
+    
+  Statistics:
+  There are 4 types of statistic:
+  <Stat> and <InvStat> are based upon values found in the "stats": section of the file: \\main\data\engine\settings\TrackingConfig.json
+  <Stat
+    name - the name of the statistic, follows "name": in the aformentioned file
+    count - optional, used with the <MultiAnd> <MultiOr> <MultiAndExact> <MultiOrExact> conditions to suply target values for multiple statistics.
+  <InvStat> - usage is the same as for <Stat> except that this value will return the inverse. Use only for <Cumulative> condition to perform a subtraction of one stat from another
+-->
+
+<Awards>
+  <!-- Uplay Section -->
+  <Award name="Victory is In Your Hands" designIndex="14"  uplay="116">
+    <Cumulative count="10">
+      <Stat name="SpiderBotDeployed" />
+    </Cumulative>
+  </Award>
+  <Award name="The soldier is the Army" designIndex="11" uplay="4">
+    <Event>
+      <Stat name="TotalOperatives" />
+    </Event>
+  </Award>
+  <!--Mission based-->
+  <Award name="The Future is Here" designIndex="2"  uplay="002" platformIndex="2" comment="Futurist story">
+    <ContextList>
+      <Stat name="MissionCompleted" count="610075" />
+    </ContextList>
+  </Award>
+  <Award name="One nation under CCTV" designIndex="3" uplay="3" platformIndex="3" comment="Kingmaker story">
+    <ContextList>
+      <Stat name="MissionCompleted" count="603928" />
+    </ContextList>
+  </Award>
+  <Award name="Soldier of Misfortune" designIndex="4" uplay="4" platformIndex="4" comment="Mercenary story">
+    <ContextList>
+      <Stat name="MissionCompleted" count="606953" />
+    </ContextList>
+  </Award>
+  <Award name="Britain Shall Not Burn" designIndex="6" uplay="6" platformIndex="6" comment="Pull the Plug">
+    <ContextList>
+      <Stat name="MissionCompleted" count="606989" />
+    </ContextList>
+  </Award>
+  <Award name="Freedom is in Peril" designIndex="5" uplay="7" platformIndex="5" comment="Crime Boss story">
+    <ContextList>
+      <Stat name="MissionCompleted" count="604329" />
+    </ContextList>
+  </Award>
+
+  <!-- Platform Specific -->
+  <Award name="Smooth Onboarding" designIndex="1" platformIndex="1">
+    <ContextList>
+      <Stat name="MissionCompleted" count="741858" />
+    </ContextList>
+  </Award>
+  <Award name="Four Chapters" designIndex="7"  platformIndex="7">
+    <ContextList>
+      <Stat name="MissionCompleted" count="610075" />
+      <Stat name="MissionCompleted" count="603928" />
+      <Stat name="MissionCompleted" count="606953" />
+      <Stat name="MissionCompleted" count="604329" />
+    </ContextList>
+  </Award>
+  <Award name="Play As Anyone" designIndex="100"  platformIndex="8">
+    <Cumulative count="20">
+      <Stat name="TotalOperatives" />
+    </Cumulative>
+  </Award>
+  <Award name="Could it be less interesting?" designIndex="101"  platformIndex="9">
+    <Cumulative count="200000">
+      <Stat name="ChallengeTotalCryptoEarned" />
+    </Cumulative>
+  </Award>
+  <Award name="Shutterbug" designIndex="102"  platformIndex="10">
+    <MultiAndExact>
+      <Stat name="ChallengePictureTakenLandmark" count="52987954476597" />
+    </MultiAndExact>
+  </Award>
+  <Award name="DedSec International" designIndex="103"  platformIndex="11">
+    <Cumulative count="1">
+      <Stat name="ChallengeAnyDsiMissionCompleted" />
+    </Cumulative>
+  </Award>
+  <Award name="The Giant of Albion" designIndex="104" platformIndex="12">
+    <ContextList>
+      <Stat name="MissionCompleted" count="730726" />
+    </ContextList>
+  </Award>
+  <Award name="Get Online" designIndex="105"  platformIndex="13">
+    <Cumulative count="30">
+      <Stat name="ChallengeTotalOnlineTokenEarned" />
+    </Cumulative>
+  </Award>
+  <Award name="Resistance is Effective" designIndex="106"  platformIndex="14">
+    <Cumulative count="5">
+      <Stat name="ChallengeTotalSpecialRecruitsCounter" />
+    </Cumulative>
+  </Award>
+  <Award name="Sad Robot" designIndex="107" platformIndex="15">
+    <ContextList>
+      <Stat name="MissionCompleted" count="600929" />
+    </ContextList>
+  </Award>
+  <Award name="The House's Cut" designIndex="108" platformIndex="16">
+    <ContextList>
+      <Stat name="MissionCompleted" count="610292" />
+    </ContextList>
+  </Award>
+  <Award name="Online Connections" designIndex="109" platformIndex="17">
+    <ContextList>
+      <Stat name="MissionCompleted" count="610295" />
+    </ContextList>
+  </Award>
+  <Award name="Real Reality" designIndex="110" platformIndex="18">
+    <ContextList>
+      <Stat name="MissionCompleted" count="608873" />
+    </ContextList>
+  </Award>
+  <Award name="Watch it Burn" designIndex="111" platformIndex="19">
+    <ContextList>
+      <Stat name="MissionCompleted" count="610080" />
+    </ContextList>
+  </Award>
+  <Award name="Here We Go" designIndex="112" platformIndex="20">
+    <ContextList>
+      <Stat name="MissionCompleted" count="619235" />
+    </ContextList>
+  </Award>
+  <Award name="Shrouded in Protocol" designIndex="113" platformIndex="21">
+    <ContextList>
+      <Stat name="MissionCompleted" count="606987" />
+    </ContextList>
+  </Award>
+  <Award name="You Know Nothing" designIndex="114" platformIndex="22">
+    <ContextList>
+      <Stat name="MissionCompleted" count="583957" />
+    </ContextList>
+  </Award>
+  <Award name="Drone Jockey" designIndex="115" platformIndex="23">
+    <ContextList>
+      <Stat name="MissionCompleted" count="610287" />
+    </ContextList>
+  </Award>
+  <Award name="Icebreaker" designIndex="116" platformIndex="24">
+    <ContextList>
+      <Stat name="MissionCompleted" count="601404" />
+    </ContextList>
+  </Award>
+  <Award name="Watch Your Back" designIndex="117" platformIndex="25">
+    <ContextList>
+      <Stat name="MissionCompleted" count="601406" />
+    </ContextList>
+  </Award>
+  <Award name="Cull the Herd" designIndex="118"  platformIndex="26">
+    <Cumulative count="20">
+      <Stat name="TotalDefaultPublicEventCounter" />
+    </Cumulative>
+  </Award>
+  <Award name="Creeping Doom" designIndex="119"  platformIndex="27">
+    <Cumulative count="5">
+      <Stat name="TotalElitePublicEventCounter" />
+    </Cumulative>
+  </Award>
+  <Award name="Deep in the Heart" designIndex="120" platformIndex="28">
+    <CumulativeContext context="0" count="5" comment="Houston">
+      <Stat name="ChallengeDsiMissionCompleted" />
+    </CumulativeContext>
+  </Award>
+  <Award name="Always Hope for Venezuela" designIndex="121" platformIndex="29">
+    <CumulativeContext context="4" count="10" comment="Caracas">
+      <Stat name="ChallengeDsiMissionCompleted" />
+    </CumulativeContext>
+  </Award>
+  <Award name="Critical Infrastructure" designIndex="122" platformIndex="30">
+    <CumulativeContext context="1" count="20" comment="Seoul">
+      <Stat name="ChallengeDsiMissionCompleted" />
+    </CumulativeContext>
+  </Award>
+  <Award name="Fair Suck of the Sauce Bottle" designIndex="123" platformIndex="31">
+    <CumulativeContext context="3" count="40" comment="Sydney">
+      <Stat name="ChallengeDsiMissionCompleted" />
+    </CumulativeContext>
+  </Award>
+</Awards>

@@ -1,0 +1,57 @@
+﻿<PatchBuilder>
+  <Resource Type="Database" Path="Databases" Filter=".xml" IncludeSubdirectories="true" />
+  <Resource Type="Domino" Path="Domino" Filter=".domino;.lua" IncludeSubdirectories="true" />
+  <Resource Type="Missions" Path="Missions" Filter=".opgraph;.opdata;.brickflow;.container.brickflow" IncludeSubdirectories="true" />
+  <Resource Type="OpData" Path="generated\Missions\static_op_data" Filter=".opdata.rml;.txt" IncludeSubdirectories="true" />
+  <Resource Type="UI" Path="ui" Filter=".feu;.feu.dep;.xml" IncludeSubdirectories="true" />
+  <Resource Type="MoveDef" Path="Move" Filter=".move.xml" IncludeSubdirectories="true" />
+  <Resource Type="Bink" Path="graphics;ui" Filter=".bik" IncludeSubdirectories="true" />
+  <Resource Type="Census" Path="census" Filter=".db" IncludeSubdirectories="true" />
+  <Resource Type="Plasma" Path="PlasmaDialogs" Filter=".dat" IncludeSubdirectories="true" />
+  <Resource Type="Rulesmith" Path="Rulesmith" Filter=".rul;.json" IncludeSubdirectories="true" />
+  <Resource Type="GameModeDescription" Path="engine\gamemodes" Filter=".xml" IncludeSubdirectories="true" />
+  <Resource Type="EngineSettings" Path="engine\settings" Filter=".xml" IncludeSubdirectories="true" />
+  <Resource Type="InputActionMaps" Path="engine\ActionMaps" Filter=".xml" IncludeSubdirectories="true" />
+  
+  <Resource Type="AIWorkspace" Path="engine\scripts" Filter=".workspace" IncludeSubdirectories="true" />
+  <Resource Type="BehaviorTree" Path="dialog\behaviortrees" Filter=".workspace" IncludeSubdirectories="true" />
+  
+  <!--
+  
+  disabled for now
+  <Resource Type="Geometry" Path="graphics" Filter=".glm;.dae" IncludeSubdirectories="true" />
+  <Resource Type="Encounter" Path="Databases\EncounterPrefabs" Filter=".lib.xml" IncludeSubdirectories="true" />
+  <Resource Type="Texture" Path="graphics;ui" Filter=".png;.dds" IncludeSubdirectories="true" />
+  <Resource Type="Phoenix" Path="ui\zeta\phoenix\sources\scenes;" Filter=".spx" IncludeSubdirectories="true" />
+  <Resource Type="WorldMap" Path="worlds\fc5_main\worldmap" Filter=".png" />
+  <Resource Type="MiniMaps" Path="worlds\fc5_main\minimaps\1" Filter=".png" />
+  <Resource Type="Animation" Path="graphics\characters;animations" Filter=".mac;.markup;.mab" IncludeSubdirectories="true" />
+  <Resource Type="Skeleton" Path="graphics" Filter=".skel.xml;.skeleton" IncludeSubdirectories="true" />
+  <Resource Type="Realtree" Path="graphics" Filter=".rta" IncludeSubdirectories="true" />
+  <Resource Type="StateMachine" Path="engine\scripts" Filter=".gosm.xml" IncludeSubdirectories="true" />
+  <Resource Type="StateMachine" Path="AnimFlow" Filter=".gosm.xml;.blob.xml" IncludeSubdirectories="true" />
+  <Resource Type="Material" Path="graphics\_materials" Filter=".material.xml;.material.bin" />
+  --><!--<Resource Type="Sector" Path="" Filter=".gsdat" IncludeSubdirectories="true" />--><!--
+
+  --><!--<Resource Type="Vista" Path="graphics" Filter=".vista" IncludeSubdirectories="true" />--><!--
+  <Resource Type="Sequence" Path="sequences" Filter=".seq;.naseq;.liseq;.auseq;.fxseq;.prseq" IncludeSubdirectories="true" />
+  --><!--<Resource Type="PoseAnimation" Path="graphics\characters" Filter=".dpas;.fxe" IncludeSubdirectories="true" />
+    <Resource Type="PoseDefinition" Path="graphics" Filter=".dpds" IncludeSubdirectories="true" />--><!--
+  --><!--<Resource Type="AnimationTrackCollection" Path="graphics\characters" Filter=".animtrackcol.xml" IncludeSubdirectories="true" />--><!--
+  <Resource Type="Archetype" Path="editor\EntityLibrary" Filter=".ark.xml" IncludeSubdirectories="true" />
+  <Resource Type="Prototype" Path="engine\prototypes" Filter=".ark.xml" IncludeSubdirectories="true" />
+  <Resource Type="Settings" Path="engine\settings" Filter=".xml" IncludeSubdirectories="true" Exceptions="engine\\settings\\perforce" />
+  <Resource Type="Settings" Path="engine\gamemodes" Filter=".xml" IncludeSubdirectories="true" />
+  <Resource Type="Settings" Path="ActionMaps" Filter=".xml" IncludeSubdirectories="true" />
+  <Resource Type="Particles" Path="NewParticles" Filter=".lib.xml" IncludeSubdirectories="true" />
+  <Resource Type="Template" Path="editor\templates" Filter=".lib.xml" IncludeSubdirectories="true" />
+  <Resource Type="Template Item" Path="editor\templates" Filter=".dbitem.xml" IncludeSubdirectories="true" />
+  <Resource Type="IGE" Path="ingameeditor" Filter=".*" IncludeSubdirectories="true" Exceptions="\\thumbnails\\" />
+  <Resource Type="Oasis" Path="Languages" Filter=".oasis" IncludeSubdirectories="true" />
+  <Resource Type="Motion" Path="graphics" Filter=".mcloth;.dcloth;.mcb" IncludeSubdirectories="true" />
+  <Resource Type="GlobalResourceHandler" Path="graphics" Filter="globalresourcehandler.nomad.*" />
+  <Resource Type="WindOcclusion" Path="worlds\sigma_main\wind" Filter=".wndo" />
+  <Resource Type="DialogActor" Path="dialog" Filter=".stimuli.dsc" IncludeSubdirectories="true" />
+  <Resource Type="Physics" Path="graphics" Filter=".hkr;.hko;.hkx" IncludeSubdirectories="true" />
+  <Resource Type="WorldOmnis" Path="worlds" Filter="*_globalentities.xml" IncludeSubdirectories="true" Exceptions="\\_autobackups\\"/>-->
+</PatchBuilder>

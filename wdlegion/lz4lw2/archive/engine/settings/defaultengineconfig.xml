@@ -1,0 +1,123 @@
+<Profile>
+
+  <QcConfig 
+		GatherFPS="1" 
+		GatherAICnt="1" 
+		GatherDialogs="0"
+		IsQcTester="0"
+		EnableMetricsReporting="1"/>
+
+  <!-- LoadingRingSizes: World, FarAway, Far, Near, MediumQuality, HighQuality, Interior, Sas, Preload, AlwaysLoaded -->
+  <!-- LoadingCircle / UnloadingCircle / LoadingTriangle Size: These values are  a scaling factor for the ring size -->
+	<WorldConfig 
+		LoadingRingSizes="Count(10) 0;8192;896;192;352;32;128;128;0;0;"
+    		MainMapName="london"
+    		SecondaryMapName="britishvirginisland"
+			LoadingCircleSlowSize="1" 
+			LoadingCircleFastSize="0" 
+			UnloadingCircleSize="1" 
+			LoadingTriangleSlowHeight="0" 
+			LoadingTriangleSlowBase="0" 
+			LoadingTriangleFastHeight="1" 
+			LoadingTriangleFastBase="0.3" 
+			SpeedToSwitchShapes="40" 
+			SpeedLerpFactor="0.05" 
+	/>
+
+    <ZoneConfig
+        Density_Clear="0.5"
+        Density_Light="1.0"
+        Density_Medium="1.5"
+        Density_Dense="2.0" >
+	</ZoneConfig>
+
+    <PhysicConfig
+		QualitySetting = "VeryHigh"
+        SplineLoftSubdivTolerance= "0.01"
+        >
+        <Qualities>
+          <quality id="VeryHigh"
+          fNormalLoadPhysicsTimeMilliSeconds="5.0"
+          fHeavyLoadPhysicsTimeMilliSeconds="7.0"
+          MaxSimplePhysObjectNormal="40"
+          MaxSimplePhysObjectHeavy="20"
+          MaxPawnRagdollNormal="15"
+          MaxPawnRagdollHeavy="5"
+          MaxPickupNormal="30"
+          MaxPickupHeavy="20"
+          MaxBreakableStaticObjectsNormal="30"
+          MaxBreakableStaticObjectsHeavy="30"
+          MaxBreakableDynamicObjectsNormal="100"
+          MaxBreakableDynamicObjectsHeavy="50"/>
+          <quality id="High"
+          fNormalLoadPhysicsTimeMilliSeconds="5.0"
+          fHeavyLoadPhysicsTimeMilliSeconds="7.0"
+          MaxSimplePhysObjectNormal="40"
+          MaxSimplePhysObjectHeavy="20"
+          MaxPawnRagdollNormal="15"
+          MaxPawnRagdollHeavy="5"
+          MaxPickupNormal="30"
+          MaxPickupHeavy="20"
+          MaxBreakableStaticObjectsNormal="30"
+          MaxBreakableStaticObjectsHeavy="30"
+          MaxBreakableDynamicObjectsNormal="100"
+          MaxBreakableDynamicObjectsHeavy="50"/>
+            <quality id="Medium"
+          fNormalLoadPhysicsTimeMilliSeconds="5.0"
+          fHeavyLoadPhysicsTimeMilliSeconds="7.0"
+          MaxSimplePhysObjectNormal="40"
+          MaxSimplePhysObjectHeavy="20"
+          MaxPawnRagdollNormal="10"
+          MaxPawnRagdollHeavy="5"
+          MaxPickupNormal="30"
+          MaxPickupHeavy="20"
+          MaxBreakableStaticObjectsNormal="30"
+          MaxBreakableStaticObjectsHeavy="30"
+          MaxBreakableDynamicObjectsNormal="100"
+          MaxBreakableDynamicObjectsHeavy="50"/>
+            <quality id="Low"
+          fNormalLoadPhysicsTimeMilliSeconds="5.0"
+          fHeavyLoadPhysicsTimeMilliSeconds="7.0"
+          MaxSimplePhysObjectNormal="20"
+          MaxSimplePhysObjectHeavy="10"
+          MaxPawnRagdollNormal="5"
+          MaxPawnRagdollHeavy="5"
+          MaxPickupNormal="30"
+          MaxPickupHeavy="20"
+          MaxBreakableStaticObjectsNormal="20"
+          MaxBreakableStaticObjectsHeavy="20"
+          MaxBreakableDynamicObjectsNormal="50"
+          MaxBreakableDynamicObjectsHeavy="25"/>                     
+        </Qualities>
+    </PhysicConfig>
+	
+	<BinkAudioConfig>
+		<Languages>
+			<language TrackID="0" name="english" />
+			<language TrackID="1" name="french" />
+			<language TrackID="2" name="spanish" />
+			<language TrackID="3" name="german" />
+			<language TrackID="4" name="italian" />
+			<language TrackID="5" name="japanese" />
+			<language TrackID="9" name="russian" />
+			<language TrackID="10" name="brazilian" />
+		</Languages>
+	</BinkAudioConfig>
+	
+	<ResourcesWidgetConfig>
+		<ResourcesCategories>
+            <Category CategoryName="Animation" MemoryBudget="225443840" ResourceTypes="CAnimationResource|CPoseAnimationResource|CPoseDefinitionResource" NotifyOverBudget="1" />
+            <Category CategoryName="Physics" MemoryBudget="83886080" ResourceTypes="CSplineLoftPhysicsResource|CPhysResource|CPhysShapesResource|CPhysBatchResource|CLoftShapeResource" NotifyOverBudget="0" />
+            <Category CategoryName="NavMesh" MemoryBudget="20971520" ResourceTypes="CPilotGroundNavMeshResource|CPilotWaterNavMeshResource|CAnnotationResource" NotifyOverBudget="1" />
+            <Category CategoryName="Volumetric" MemoryBudget="20971520" ResourceTypes="CPilotVolumetricResource" NotifyOverBudget="1" />
+            <Category CategoryName="Sounds" MemoryBudget="199229440" ResourceTypes="CSoundResource" NotifyOverBudget="1" />
+            <Category CategoryName="DialogPack" MemoryBudget="104857600" ResourceTypes="CActorDialogPackResource|CActorDialogLocalizedPackResource" NotifyOverBudget="1" />
+            <Category CategoryName="Graphics" MemoryBudget="2359296000" ResourceTypes="CGeometryResource|CGeometryMipResource|CTextureResource|CTextureMipResource|CRealtreeResource|CSplineLoftLowResGfxResource|CSplineLoftHiResGfxResource|CLightProbesResource|CBinkResource|CFireTextureResource" NotifyOverBudget="1" />
+            <Category CategoryName="UI-Graphics" MemoryBudget="26214400" ResourceTypes="CFireTextureResource" NotifyOverBudget="1" />
+            <Category CategoryName="Streaming" MemoryBudget="419430400" ResourceTypes="CSectorResourceHiRes|CMaterialResource|CModelResource" NotifyOverBudget="1" />
+            <Category CategoryName="Engine" MemoryBudget="52428800" ResourceTypes="CSectorResourceLowRes|CActorDialogStimuliDescriptorRes|CAnimationTrackCollectionResource|CArchetypeResource|CBTWorkspaceResource|CBuildingBatchResourceHiRes|CConversationTableResource|CCoverDefinitionResource|CDialogIndicesResource|CDialogStimuliResource|CParticlesEmitterParamResource|CParticlesSystemParamResource|CResourceContainer|CRoadNetworkResource|CSectorResource|CSkeletonResource|CSRLResource|CStateMachineBlobResource|CStateMachineResource|CWorldUnitDataResource|CWorldWrappingTextureTileResource|CXmlResource" NotifyOverBudget="1" />
+		    <Category CategoryName="Binks" MemoryBudget="5242880" ResourceTypes="CBinkResource" NotifyOverBudget="1" />
+		</ResourcesCategories>
+	</ResourcesWidgetConfig>
+	
+</Profile>

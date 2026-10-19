@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<Settings Version="1.7">
+  <Assembly Name="Disrupt">
+	<Type Name="Disrupt.Settings.GlobalSettings">
+      <Setting Name="FeedbackMailingListAddress">
+	    <Value Value="ORWELL-Support@ubisoft.com" Type="String" />
+	  </Setting>
+    </Type>	
+    <Type Name="Disrupt.Settings.WorldSettings">
+      <Setting Name="MinWorldSize">
+        <Value Value="512" Type="Int32" />
+      </Setting>
+      <Setting Name="MaxWorldSize">
+        <Value Value="8192" Type="Int32" />
+      </Setting>	  
+    </Type>
+    <Type Name="Disrupt.MainWindow.ViewModels.ViewportSettingsViewModel">
+      <Instance Name="Instance">
+        <Setting Name="InfoBarNumericPositionSmallStep">
+          <Value Value="0.001" Type="Double" />
+        </Setting>
+        <Setting Name="InfoBarNumericPositionNormalStep">
+          <Value Value="0.1" Type="Double" />
+        </Setting>
+        <Setting Name="InfoBarNumericPositionLargeStep">
+          <Value Value="1" Type="Double" />
+        </Setting>
+        <Setting Name="InfoBarNumericRotationSmallStep">
+          <Value Value="0.1" Type="Double" />
+        </Setting>
+        <Setting Name="InfoBarNumericRotationNormalStep">
+          <Value Value="1" Type="Double" />
+        </Setting>
+        <Setting Name="InfoBarNumericRotationLargeStep">
+          <Value Value="2" Type="Double" />
+        </Setting>
+        <Setting Name="GridEnabled">
+          <Value Value="True" Type="Boolean" />
+        </Setting>
+        <Setting Name="GridStepSize">
+          <Value Value="4" Type="Double" />
+        </Setting>
+        <Setting Name="SnapAngleEnabled">
+          <Value Value="True" Type="Boolean" />
+        </Setting>
+        <Setting Name="SnapAngle">
+          <Value Value="5" Type="Double" />
+        </Setting>
+        <Setting Name="InfoBarPosition">
+          <Value Value="Bottom" Type="System.Windows.Controls.Dock" Assembly="PresentationFramework" />
+        </Setting>
+        <Setting Name="MarketingScreenshotFormat">
+          <Value Value="False" Type="Boolean" />
+        </Setting>
+        <Setting Name="InfoBarNumericScaleSmallStep">
+          <Value Value="0.1" Type="Double" />
+        </Setting>
+        <Setting Name="InfoBarNumericScaleNormalStep">
+          <Value Value="0.5" Type="Double" />
+        </Setting>
+        <Setting Name="InfoBarNumericScaleLargeStep">
+          <Value Value="1" Type="Double" />
+        </Setting>
+        <Setting Name="RenderQualitySetting">
+          <Value Value="pc_editor" Type="String" />
+        </Setting>
+      </Instance>
+    </Type>
+	<Type Name="Disrupt.MainWindow.ViewModels.RibbonViewModel">
+      <Setting Name="QatItems">
+	    <Value Value="&lt;RibbonControlPathList Capacity=&quot;4&quot; xmlns=&quot;clr-namespace:ActiproSoftware.Windows.Controls.Ribbon.Customization;assembly=Actipro.Ribbon.Wpf&quot; xmlns:assembly=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot; xmlns:ribbon=&quot;http://schemas.actiprosoftware.com/winfx/xaml/ribbon&quot;&gt;&#xD;&#xA;	&lt;RibbonControlPath Capacity=&quot;4&quot;&gt;&#xD;&#xA;		&lt;RibbonControlPathItem Id=&quot;{assembly:Null}&quot; Label=&quot;HOME&quot; Type=&quot;ribbon:Tab&quot; /&gt;&#xD;&#xA;		&lt;RibbonControlPathItem Id=&quot;{assembly:Null}&quot; Label=&quot;Data&quot; Type=&quot;ribbon:Group&quot; /&gt;&#xD;&#xA;		&lt;RibbonControlPathItem Id=&quot;{assembly:Null}&quot; Label=&quot;{assembly:Null}&quot; Type=&quot;ribbon:StackPanel&quot; /&gt;&#xD;&#xA;		&lt;RibbonControlPathItem Id=&quot;{assembly:Null}&quot; Label=&quot;Asset Browser&quot; Type=&quot;ribbon:Button&quot; /&gt;&#xD;&#xA;	&lt;/RibbonControlPath&gt;&#xD;&#xA;	&lt;RibbonControlPath Capacity=&quot;4&quot;&gt;&#xD;&#xA;		&lt;RibbonControlPathItem Id=&quot;{assembly:Null}&quot; Label=&quot;HOME&quot; Type=&quot;ribbon:Tab&quot; /&gt;&#xD;&#xA;		&lt;RibbonControlPathItem Id=&quot;{assembly:Null}&quot; Label=&quot;Data&quot; Type=&quot;ribbon:Group&quot; /&gt;&#xD;&#xA;		&lt;RibbonControlPathItem Id=&quot;{assembly:Null}&quot; Label=&quot;{assembly:Null}&quot; Type=&quot;ribbon:StackPanel&quot; /&gt;&#xD;&#xA;		&lt;RibbonControlPathItem Id=&quot;{assembly:Null}&quot; Label=&quot;Database&quot; Type=&quot;ribbon:Button&quot; /&gt;&#xD;&#xA;	&lt;/RibbonControlPath&gt;&#xD;&#xA;&lt;/RibbonControlPathList&gt;" Type="String" />
+      </Setting>
+    </Type>
+  </Assembly>
+  <Assembly Name="Disrupt.ApplicationModel">
+    <Type Name="Disrupt.ApplicationModel.GeneralSettings">
+      <Setting Name="WindowLocation">
+        <Value Value="0,0" Type="System.Windows.Point" Assembly="WindowsBase" />
+      </Setting>
+      <Setting Name="WindowSize">
+        <Value Value="1024,768" Type="System.Windows.Size" Assembly="WindowsBase" />
+      </Setting>
+      <Setting Name="WindowState">
+        <Value Value="Maximized" Type="System.Windows.WindowState" Assembly="PresentationFramework" />
+      </Setting>
+    </Type>
+  </Assembly>
+  <Assembly Name="Disrupt.Controls">
+    <Type Name="Disrupt.Controls.Themes.ThemeManager">
+      <Setting Name="CurrentTheme">
+        <Value Value="Light" Type="Disrupt.Controls.Themes.Theme" Assembly="Disrupt.Controls" />
+      </Setting>
+    </Type>
+  </Assembly>
+  <Assembly Name="Disrupt.GraphicKit">
+    <Type Name="Disrupt.GraphicKit.Settings">
+      <Setting Name="DefaultGraphicKitDataPath">
+        <Value Value="Graphics\Characters\wd2\" Type="String" />
+      </Setting>
+    </Type>
+  </Assembly>
+  <Assembly Name="Disrupt.Services.Jira">
+    <Type Name="Disrupt.Services.Jira.Settings.ObjectBankTrackingSettings">
+      <Instance Name="Instance">
+		<Setting Name="FileIdCustomField">
+			<Value Value="10886" Type="Int32" />
+		</Setting>
+        <Setting Name="SearchQuery">
+          <Value Value="Project = &quot;Orwell - Object Bank&quot; AND Type IN (&quot;Skin &amp; Paint Job&quot;, &quot;Object Bank - ALL&quot;, &quot;Request Texture&quot;, &quot;Archetype Creation&quot;, &quot;Object Bank - Breakable&quot;, &quot;Object Bank - FX&quot;, &quot;Object Bank - Breakable Sound&quot;, &quot;Object Bank - Characters&quot;, &quot;Object Bank - Vehicles&quot;, &quot;Object Bank - Breakable Integration&quot;, &quot;Object Bank - Sound&quot;)" Type="String" />
+        </Setting>
+        <Setting Name="ObjectIdCustomField">
+          <Value Value="cf[10886]" Type="String" />
+        </Setting>
+        <Instance Name="RejectedStatusList[List]">
+          <Setting Name="0">
+            <Value Value="Deleted" Type="String" />
+          </Setting>
+          <Setting Name="1">
+            <Value Value="Deleted Object Bank" Type="String" />
+          </Setting>
+          <Setting Name="2">
+            <Value Value="Duplicate" Type="String" />
+          </Setting>
+          <Setting Name="3">
+            <Value Value="Rejected" Type="String" />
+          </Setting>
+        </Instance>
+        <Instance Name="AcceptedStatusList[List]">
+          <Setting Name="0">
+            <Value Value="Closed" Type="String" />
+          </Setting>
+          <Setting Name="1">
+            <Value Value="Locked" Type="String" />
+          </Setting>
+          <Setting Name="2">
+            <Value Value="Final Approval" Type="String" />
+          </Setting>
+        </Instance>
+		<Instance Name="InProgressStatusList[List]">
+		</Instance>
+        <Setting Name="BaseUrl">
+          <Value Value="https://mdc-tomcat-jira88.ubisoft.org/jira" Type="String" />
+        </Setting>
+        <Setting Name="Login">
+          <Value Value="jira_barn" Type="String" />
+        </Setting>
+        <Setting Name="Password">
+          <Value Value="jira_barn" Type="String" />
+        </Setting>
+        <Setting Name="RequestTurnOver">
+          <Value Value="10" Type="Int32" />
+        </Setting>
+        <Setting Name="RequestCapacity">
+          <Value Value="60" Type="Int32" />
+        </Setting>
+        <Setting Name="QueryCapacity">
+          <Value Value="30" Type="Int32" />
+        </Setting>
+        <Setting Name="AwakeTime">
+          <Value Value="30000" Type="Int32" />
+        </Setting>
+        <Setting Name="RequestLifeTime">
+          <Value Value="90000" Type="Int32" />
+        </Setting>
+        <Setting Name="UpdaterFrequency">
+          <Value Value="100" Type="Int32" />
+        </Setting>
+      </Instance>
+    </Type>
+  </Assembly>
+</Settings>

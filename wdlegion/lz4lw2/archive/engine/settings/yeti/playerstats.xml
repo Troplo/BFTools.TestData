@@ -1,0 +1,5 @@
+<Stats>
+  <Stat name="Playtime" stat_id="TotalPlayTime"  gamer_stat_id="Playtime" />
+  <Stat name="Online Playtime" stat_id="TotalPlayTimeMultiPlayer"  gamer_stat_id="COOP_Playtime" />
+  <Stat name="Story Progress" stat_id="MainMissionCompleted"  gamer_stat_id="Story_Progress" />
+</Stats>

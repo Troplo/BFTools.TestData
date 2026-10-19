@@ -1,0 +1,14 @@
+<SoundRegionLayerConfig>
+  <RegionBlocks x="3" y="3" />
+  <Layers>
+      <Layer name="Main" maxRegions="128" />
+      <Layer name="Wind" maxRegions="16"/>
+      <Layer name="Rain" maxRegions="16" />
+      <Layer name="Walla" maxRegions="8" />
+      <Layer name="Reverb" maxRegions="32" />
+      <Layer name="RandomFX" maxRegions="128" />
+      <Layer name="Interior" maxRegions="128" />
+      <Layer name="Water" maxRegions="32" />
+	  <Layer name="MoodZones" maxRegions="32" />
+  </Layers>
+</SoundRegionLayerConfig>

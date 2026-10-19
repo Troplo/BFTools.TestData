@@ -1,0 +1,119 @@
+<!-- **************************************************************************
+	NbRotation* values need to be the same accross qualities
+	When we export data, the realtree batches are created according to the
+	simulation handle, amongst other things, and if the rotationGroup values
+	differ between the editor and standalone, trees in the same batch could
+	end up using different simulation handles and thus create inconsistencies
+     ***********************************************************************-->	
+<Profile Quality="Ultra">
+
+	<UltraQuality 
+	 		TreeLODAgressivity="1" 
+	 		PlantLODAgressivity="1" 
+	 		FixedDeltatime="-1.0"
+	 		
+			BudgetSimulation="500000"
+	 		
+			NbRotationSmallTrees="7.0"
+			NbRotationMediumTrees="7.0"
+			NbRotationLargeTrees="7.0"						
+
+			RegenSpeed=" 0.02"
+			ScaleOutSpeed="0.05"									
+			
+	 		ResponseToAnimal="1"
+	 		
+			MultiScaleOutSpeed="0.90"						
+
+			LeavesRatio="1.0"
+			ShadowLeavesRatio="1.0"
+/>
+	
+	<HighQuality 
+			TreeLODAgressivity="1" 
+			PlantLODAgressivity="1" 
+			FixedDeltatime="-1.0"
+	 		
+			BudgetSimulation="500000"
+	 		
+			NbRotationSmallTrees="7.0"
+			NbRotationMediumTrees="7.0"
+			NbRotationLargeTrees="7.0"						
+
+			RegenSpeed=" 0.02"
+			ScaleOutSpeed="0.05"						
+
+	 		ResponseToAnimal="1"	 			 		
+	 		
+			MultiScaleOutSpeed="0.90"						
+
+			LeavesRatio="1.0"
+			ShadowLeavesRatio="1.0"
+	/>
+	
+	<MediumQuality 
+			TreeLODAgressivity="1" 
+			PlantLODAgressivity="1" 
+			FixedDeltatime="-1.0"
+	 		
+			BudgetSimulation="400000"
+	 		
+			NbRotationSmallTrees="7.0"
+			NbRotationMediumTrees="7.0"
+			NbRotationLargeTrees="7.0"						
+
+			RegenSpeed=" 0.02"
+			ScaleOutSpeed="0.05"						
+
+	 		ResponseToAnimal="1"	 			 		
+	 		
+			MultiScaleOutSpeed="0.90"						
+
+			LeavesRatio="1.0"
+			ShadowLeavesRatio="1.0"
+	/>
+	
+	<LowQuality 
+			TreeLODAgressivity="1" 
+			PlantLODAgressivity="1" 
+			FixedDeltatime="-1.0"
+	 		
+			BudgetSimulation="250000"
+			NbRotationSmallTrees="7.0"
+			NbRotationMediumTrees="7.0"
+			NbRotationLargeTrees="7.0"						
+
+			RegenSpeed=" 0.02"
+			ScaleOutSpeed="0.05"						
+
+	 		ResponseToAnimal="0"	 			 		
+	 		
+			MultiScaleOutSpeed="0.90"						
+
+			LeavesRatio="1.0"
+			ShadowLeavesRatio="1.0"
+	/>
+	
+	<CustomQuality 
+	 		TreeLODAgressivity="1" 
+	 		PlantLODAgressivity="1" 
+	 		FixedDeltatime="-1.0"
+	 		
+			BudgetSimulation="500000"
+	 		
+			NbRotationSmallTrees="7.0"
+			NbRotationMediumTrees="7.0"
+			NbRotationLargeTrees="7.0"						
+
+			RegenSpeed=" 0.02"
+			ScaleOutSpeed="0.05"									
+			
+	 		ResponseToAnimal="1"
+	 		
+			MultiScaleOutSpeed="0.90"						
+
+			LeavesRatio="1.0"
+			ShadowLeavesRatio="1.0"
+	/>
+	
+</Profile>

@@ -1,0 +1,35 @@
+<Profile AutoLaunch="1">
+  <!--Verbosity Levels-->
+  <!--
+    DebugEventMessageLevel_Off     = 0,                 // Turns off all logging. (this level should not exist the way it is, use NotSet whenever you can)
+    DebugEventMessageLevel_Critical= 1,                 // Should be corrected immediately, but the world isn't collapsing yet
+    DebugEventMessageLevel_Error   = 2,                 // Error events that might still allow the application to continue running.
+    DebugEventMessageLevel_Warning = 3,                 // Potentially harmful situations, must be resolved within a given time.
+    DebugEventMessageLevel_Notice  = 4,                 // Events that are unusual but not error conditions, might be useful to spot potential problems, no immediate action required.
+    DebugEventMessageLevel_Info    = 5,                 // Informational messages that highlight the progress of the application at coarse-grained level.
+    DebugEventMessageLevel_Debug   = 6,                 // Fine-grained informational events that are most useful to debug an application.
+  -->
+  <Profiles>
+    <Profile Name="AllOff">
+            <Channels>
+              </Channels>
+          </Profile>
+          <Profile Name="Dialogs">
+            <Channels>
+              <Channel Name="Dialog" Verbosity="6" />
+              <Channel Name="Conversation" Verbosity="6" />
+              </Channels>
+          </Profile>
+          <Profile Name="Pathfind Debug">
+            <Channels>
+              <Channel Name="Pathfind" Verbosity="6" />
+              </Channels>
+          </Profile>
+          <Profile Name="RoadNetwork">
+            <Channels>
+              <Channel Name="Roads" Verbosity="3" />
+              <Channel Name="SplineNetwork" Verbosity="3" />
+              </Channels>
+    </Profile>
+  </Profiles>
+</Profile>

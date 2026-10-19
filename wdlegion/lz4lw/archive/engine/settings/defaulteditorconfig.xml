@@ -1,0 +1,13 @@
+<Profile
+	>
+
+  <!-- WorldConfig -->
+  <!-- RingData: entities, landmarkNear, landmarkFar, terrain, preload -->
+	<WorldConfig 
+    SupportUnusedMapSector="1"
+    UpdatePeriod="-1"
+    SectorLinksRelax="0"
+    RingData="4,5,8,20,0">
+	</WorldConfig>
+
+</Profile>

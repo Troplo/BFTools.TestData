@@ -1,0 +1,77 @@
+<FieldsConfig>
+  <Fields>
+    <!--
+            Name: name of the field in lucene
+            Title: display name
+            IsFaceted: if the field needs to be faceted
+            InFilters: if the field needs to be in the filters in the browser (need IsFaceted="true")
+            InPostCard: if the info needs to be displayed in the postcards
+        -->
+
+    <FieldConfig Name="type" Title="Type" IsFaceted="true" InFilters="true" InColumns="true">
+      <FieldFilterExtra IsDisplayed="true" PriorityOrder="1" />
+    </FieldConfig>
+    
+    <!-- History doc processor -->
+    <FieldConfig Name="refbycount" Title="Ref by count" IsFaceted="true" InFilters="true">
+      <FieldFilterExtra ControlWidth="160" NameToOrderType="Num" />
+    </FieldConfig>
+    <FieldConfig Group="Date" Name="modified" Title="Date modified" IsFaceted="true" InFilters="true">
+      <FieldFilterExtra ControlWidth="160" NameToOrderType="Date" />
+    </FieldConfig>
+    <FieldConfig Group="Date" Name="modifiedlocally" Title="Date modified local" IsFaceted="true" InFilters="true">
+      <FieldFilterExtra ControlWidth="160" NameToOrderType="Date" />
+    </FieldConfig>
+    <FieldConfig Group="Date" Name="referenced" Title="Date ref" IsFaceted="true" InFilters="true">
+      <FieldFilterExtra ControlWidth="160" NameToOrderType="Date" />
+    </FieldConfig>
+    <FieldConfig Group="Date" Name="referencedlocally" Title="Date ref local" IsFaceted="true" InFilters="true">
+      <FieldFilterExtra ControlWidth="160" NameToOrderType="Date" />
+    </FieldConfig>
+    <FieldConfig Group="Date" Name="created" Title="Date created" IsFaceted="true" InFilters="true">
+      <FieldFilterExtra ControlWidth="160" NameToOrderType="Date" />
+    </FieldConfig>
+    <FieldConfig Name="writable" Title="Writable" IsFaceted="true" InFilters="true" InColumns="true" />
+
+    <!-- NomadObject -->
+    <FieldConfig Group="Class" Name="nomadclass" Title="Nomad Class" IsFaceted="true" InFilters="true" InColumns="true">
+      <FieldFilterExtra ControlWidth="250" />
+    </FieldConfig>
+
+    <!-- Materials -->
+    <FieldConfig Name="materialfamily" Title="Material family" IsFaceted="true" InFilters="true" InPostCard="true" />
+    
+    <!-- Anim -->
+    <FieldConfig Group="Animation" Name="anim_sound_status" Title="Sound Status"        IsFaceted="true" InFilters="true" />
+    <FieldConfig Group="Animation" Name="anim_sound_progress" Title="Sound Progress"    IsFaceted="true" InFilters="true" InColumns="true" />
+    <FieldConfig Group="Animation" Name="movenodetype" Title="Move Node Type"           IsFaceted="true" InFilters="true" InColumns="true" />
+    <FieldConfig Group="Animation" Name="animusage_starttime" Title="Anim Start Time"   IsFaceted="false" InFilters="false" InColumns="false" />
+    <FieldConfig Group="Animation" Name="animusage_stoptime" Title="Anim Stop Time"     IsFaceted="false" InFilters="false" InColumns="false" />
+    <FieldConfig Group="Animation" Name="animusage_cuttime" Title="Anim Cut Time"       IsFaceted="false" InFilters="false" InColumns="false" />
+    <FieldConfig Group="Animation" Name="animusage_blendtime" Title="Anim Blend Time"   IsFaceted="false" InFilters="false" InColumns="false" />
+    <FieldConfig Group="Animation" Name="animusage_blendtype" Title="Anim Blend Type"   IsFaceted="true" InFilters="false" InColumns="false" />
+    <FieldConfig Group="Animation" Name="animusage_multiplier" Title="Anim Multiplier"  IsFaceted="true" InFilters="false" InColumns="false" />
+    
+    <!-- Tags -->
+    <FieldConfig Group="Tags" Name="labels" Title="Labels" IsFaceted="true" InFilters="true" InColumns="true" />
+    
+    <!-- Oasis -->
+    <FieldConfig Name="oasis_text" Title="Text" InColumns="true" InPostCard="true" />
+    
+    <!-- Jira -->
+    <FieldConfig Name="jirastatus"          Title="JiraStatus"             InColumns="true" InFilters="true" IsFaceted="true" />
+    <FieldConfig Name="JiraKey"             Title="JiraKey"                InColumns="true" InFilters="false" IsFaceted="false" />
+    <FieldConfig Name="JiraLevelOfQuality"  Title="JiraLevelOfQuality"     InColumns="true" InFilters="false" IsFaceted="false" />
+    
+    <!-- Entity -->
+    <FieldConfig Name="Map"    			Title="Map"   			InPostCard="true" />
+    <FieldConfig Name="Pos"    			Title="Position"   	InPostCard="true" />
+    <FieldConfig Name="SectorId"    Title="Sector Id"   InPostCard="true" />
+    <FieldConfig Name="worldname"   Title="World name"  InPostCard="true" IsFaceted="true" InFilters="true" InColumns="true" />
+
+    <!-- Archetype -->
+    <FieldConfig Name="component" Title="Components" IsFaceted="true" InFilters="true" InColumns="true">
+      <FieldFilterExtra ControlWidth="300" />
+    </FieldConfig>
+  </Fields>
+</FieldsConfig>

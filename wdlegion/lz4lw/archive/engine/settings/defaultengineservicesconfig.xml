@@ -1,0 +1,363 @@
+<Profile>
+  <!-- BloombergConfig -->
+  <BloombergConfig
+    IsActive="1"
+    ServerIP="msr-wd3-blo01.ubisoft.org"
+    ServerPort="12090"
+    ReporterPort="12092"
+    SymbolPath="srv*D:\Temp\Symbols*\\ubisoft.org\projects\Driver\Dump\QA\Symbols\Microsoft;srv*D:\Temp\Symbols*http://msdl.microsoft.com/download/symbols;srv*"
+    PCEditorExecNamePrefix="editor"
+    PCGameExecNamePrefix="duniademo;driver;WatchDogs"
+    ReporterExclusionList="compilation.driver"
+    IsSimulateCrashActive="0"
+    EnableStats="0"
+    PerforceCodeServer="p4-tor-dunia-code:2326"
+    PerforceDataServer="p4-wd3-data-ncsa-edge01:3626"
+    PerforceSoundServer="p4-wd3-sound-ncsa-edge01:3636">
+  <Proxies>
+    <Proxy Address="buc-proxy-bloomberg.ubisoft.org" Port="12090" IPRanges="10.18." ReportTypes="31" />
+    <Proxy Address="pdc-wd-bloom.ubisoft.org" Port="12090" IPRanges="10.39.;10.68.;10.31.;10.0." ReportTypes="31" />
+		<Proxy Address="192.168.5.100" Port="12090" IPRanges="192.168." ReportTypes="31" />
+   </Proxies>
+  </BloombergConfig>
+  <!-- HiResResourceLoaderConfig -->
+  <HiResResourceLoaderConfig
+    DefaultRadius="31.0"
+    UpdateInterval="0.0"
+    StartupDebugDrawEnabled="0"/>
+	
+  <!-- ErrorConfig -->
+  <ErrorConfig
+    EnableAssert="0"
+    AllowDebugInError="0"
+    UseErrorNotification="1"
+    EnablePopups="0">
+
+    <!--
+    Sink configuration:
+
+    Default values:
+        Bloomberg="0"
+        Type="" - treated as "File"
+        Filename=""
+        Count="0"
+        MaxSize=2000000
+    
+    Id = name of the sink
+
+    Enabled = 0,1
+            
+    Scope:
+        0 - all
+        1 - pc only
+        2 - consoles only
+            
+    Bloomberg:
+        0 - do not add to bloomberg
+        1 - always add to bloomberg
+            
+    Type:
+        1. File - regular file on disk. Attributes: Filename - if empty, defaulting to "nomad_log-<sinkId>-{login}.txt".
+        2. Memory - circular buffer in memory. Attributes: MaxSize - size of buffer in memory. Filename(optional) - file to dump this log on shutdown or crash.
+        3. MultiFile - kind of circular buffer built on files (very usefull for big logs on consoles). 
+            Attributes: Count = number of files in log. MaxSize - max size of Each file. Filename - file name pattern, default is "nomad_log-<sinkId>-{login}-{num}.txt".
+            
+    Tags:
+        {login} - login (empty on consoles). If the -login argument is provided on start up then the argument value is used, otherwise the system user name is used and if there is more that one instance, login will be truncated and {pid} will be added. (kindof "{login}-{pid})
+        {pid} - process id (empty on consoles)
+        {num} - file index in MultiFile log.
+-->
+      
+    <ChannelSinks>
+      <Sink Id="" Bloomberg="1" Type="Memory" MaxSize="5000000" FileName="nomad_log-default-{login}.txt" TypeForNonValidVersion="File" />
+      <Sink Id="online" Bloomberg="1" Type="Memory" MaxSize="5000000" FileName="nomad_log-online-{login}.txt" TypeForNonValidVersion="File" />
+      <Sink Id="replication" Bloomberg="1" Type="Memory" MaxSize="5000000" FileName="nomad_log-replication-{login}.txt" TypeForNonValidVersion="File" />
+      <Sink Id="challenge" Bloomberg="1" Type="Memory" MaxSize="5000000" FileName="nomad_log-challenges-{login}.txt" TypeForNonValidVersion="File" />
+    </ChannelSinks>
+      
+    <!--
+    Channel configuration:
+
+    Name = name of the channel
+
+    Verbosity = verbosity level.
+      DebugEventMessageLevel_Off     = 0,     // Turns off all logging.
+      DebugEventMessageLevel_Critical= 1,     // Should be corrected immediately, but the world isn't collapsing yet
+      DebugEventMessageLevel_Error   = 2,     // Error events that might still allow the application to continue running.
+      DebugEventMessageLevel_Warning = 3,     // Potentially harmful situations, must be resolved within a given time.
+      DebugEventMessageLevel_Notice  = 4,     // Events that are unusual but not error conditions, might be useful to spot potential problems, no immediate action required.
+      DebugEventMessageLevel_Info    = 5,     // Informational messages that highlight the progress of the application at coarse-grained level.
+      DebugEventMessageLevel_Debug   = 6,     // Fine-grained informational events that are most useful to debug an application.
+
+    SinkId = name of the sink from ChannelSinks list. 
+      If SinkId is not specified we will try to find sink with the empty name.
+-->
+    <Channels>
+      <Channel Name="CoreTools" Verbosity="5" />
+      <Channel Name="NomadTools" Verbosity="5" />
+      <Channel Name="StreamingTraceRequest" Verbosity="5" />
+      <Channel Name="StreamingTraceLoading" Verbosity="5" />
+      <Channel Name="StreamingTraceReading" Verbosity="5" />
+      <Channel Name="StreamingTraceOpen" Verbosity="5" />
+      <Channel Name="AssetStore" Verbosity="5" />
+      <Channel Name="Cinema" Verbosity="5" />
+      <Channel Name="Physics" Verbosity="5" />
+      <Channel Name="Animation" Verbosity="5" />
+      <Channel Name="3D" Verbosity="5" />
+	  <Channel Name="Graphic Kit" Verbosity="5" />
+      <Channel Name="ToolServices" Verbosity="5" />
+      <Channel Name="ToolFramework" Verbosity="5" />
+      <Channel Name="ToolFrameworkNetwork" Verbosity="5" />
+      <Channel Name="FileDescConverter" Verbosity="6" />
+      <Channel Name="DataFileConverter" Verbosity="6" />
+      <Channel Name="TextureConverter" Verbosity="6" />
+      <Channel Name="Editor" Verbosity="5" />
+      <Channel Name="EditorExporter" Verbosity="5" />
+	  <Channel Name="Electrical Network" Verbosity="5" />
+      <Channel Name="Editor - ApplicationModel" Verbosity="5" />
+      <Channel Name="Editor - Core" Verbosity="5" />
+      <Channel Name="Editor - Interop" Verbosity="5" />
+      <Channel Name="Editor - Controls" Verbosity="5" />
+      <Channel Name="Editor - Controls - PropertyGrid" Verbosity="5" />
+      <Channel Name="Editor - AssetManager" Verbosity="5" />
+      <Channel Name="Editor - Geometry Asset" Verbosity="5" />
+      <Channel Name="Editor - Material Asset" Verbosity="5" />
+      <Channel Name="Editor - Reaction Rule Tool" Verbosity="5" />
+      <Channel Name="Editor - Objects" Verbosity="5" />
+	  <Channel Name="Editor - World Tile Screenshot" Verbosity="5" />
+      <Channel Name="Disrupt Services - Metadata" Verbosity="5" />
+      <Channel Name="Disrupt Services - Thumbnails" Verbosity="5" />
+      <Channel Name="Disrupt - Debug Tools" Verbosity="5" />
+      <Channel Name="Disrupt - Assets Helpers" Verbosity="5" />
+      <Channel Name="Editor - World Tile Screenshot" Verbosity="5" />
+      <Channel Name="EngineServices" Verbosity="5" />
+      <Channel Name="BehaviorTree" Verbosity="5" />
+      <Channel Name="Blackbox" Verbosity="5" />
+      <Channel Name="Script" Verbosity="5" />
+      <Channel Name="Resources" Verbosity="5" />
+      <Channel Name="Export" Verbosity="6" />
+      <Channel Name="World" Verbosity="5" />
+      <Channel Name="Materials" Verbosity="5" />
+      <Channel Name="Models" Verbosity="5" />
+      <Channel Name="Job" Verbosity="5" />
+      <Channel Name="Entity" Verbosity="5" />
+      <Channel Name="EntitySink" Verbosity="5" />
+      <Channel Name="Input" Verbosity="5" />
+      <Channel Name="Dissect" Verbosity="5" />
+      <Channel Name="ndEvent" Verbosity="5" />
+      <Channel Name="ConsoleCommands" Verbosity="5" />
+      <Channel Name="PluginServices" Verbosity="5" />
+      <Channel Name="Sound" Verbosity="5" />
+      <Channel Name="SoundSystem" Verbosity="5" />
+      <Channel Name="AsyncOperation" Verbosity="5" SinkId="online" />
+      <Channel Name="Components" Verbosity="5" />
+      <Channel Name="Engine" Verbosity="5" />
+      <Channel Name="Fire" Verbosity="5" />
+      <Channel Name="Events" Verbosity="5" />
+      <Channel Name="Passenger" Verbosity="5" />
+      <Channel Name="FrameExtraction" Verbosity="5" />
+      <Channel Name="Camera" Verbosity="5" />
+      <Channel Name="GameModes" Verbosity="5" />
+      <Channel Name="Roads" Verbosity="5" />
+      <Channel Name="SplineNetwork" Verbosity="5" />
+      <Channel Name="Cover" Verbosity="5" />
+      <Channel Name="Vegetation" Verbosity="5" />
+	  <Channel Name="LocelCubeMap" Verbosity="5" />
+	  <Channel Name="BatchedInstance" Verbosity="5" />
+      <Channel Name="DTest" Verbosity="5" />
+      <Channel Name="Particles" Verbosity="5" />
+	  <Channel Name="AliveGroupBehavior" Verbosity="5" />
+	  <Channel Name="MultiUserEdit" Verbosity="5" />
+      <Channel Name="OnlineSession" Verbosity="5" SinkId="online" />
+      <Channel Name="BattlEye" Verbosity="5" SinkId="online" />
+      <Channel Name="OnlineTrap" Verbosity="5" SinkId="online" />  
+      <Channel Name="MetaSessionManager" Verbosity="5" SinkId="online" />
+      <Channel Name="OnlineActivities" Verbosity="5" SinkId="online" />
+      <Channel Name="DriverSessionFlow" Verbosity="5" SinkId="online" />
+      <Channel Name="Firewall" Verbosity="5" SinkId="online" />
+      <Channel Name="Availability" Verbosity="5" SinkId="online" />
+      <Channel Name="HttpProfilerLog" Verbosity="5" />
+      <Channel Name="HttpProfilerReport" Verbosity="5" />
+      <Channel Name="RendezVous" Verbosity="5" SinkId="online" />
+      <Channel Name="Storm" Verbosity="6" SinkId="online" />
+      <Channel Name="UbiServices" Verbosity="5" SinkId="online" />
+      <Channel Name="HostMigration" Verbosity="5" SinkId="online" />
+      <Channel Name="Network" Verbosity="5" SinkId="online" />
+      <Channel Name="PeerChannel" Verbosity="5" SinkId="online" />
+      <Channel Name="NetObject" Verbosity="5" SinkId="online" />
+      <Channel Name="VoiceChat" Verbosity="6" SinkId="online" />
+      <Channel Name="Bandwidth" Verbosity="5" SinkId="online" />
+      <Channel Name="GameConfig" Verbosity="5" SinkId="online" />
+      <Channel Name="GlobalModifier" Verbosity="5" SinkId="online" />
+      <Channel Name="MatchMaking" Verbosity="6" SinkId="online" />
+      <Channel Name="OnlineProfile" Verbosity="5" SinkId="online" />
+      <Channel Name="LoadingScreen" Verbosity="5" SinkId="online" />
+      <Channel Name="PlayerService" Verbosity="5" />
+      <Channel Name="Stats" Verbosity="5" />
+      <Channel Name="Navmesh" Verbosity="5" />
+      <Channel Name="Pathfind" Verbosity="5" />
+	  <Channel Name="Annotations" Verbosity="5" />
+      <Channel Name="ActionNodes" Verbosity="5" />
+      <Channel Name="AI" Verbosity="5" />
+      <Channel Name="HackResponse" Verbosity="5" />
+      <Channel Name="AIReactions" Verbosity="5" />
+      <Channel Name="AIReactionsAnimationRules" Verbosity="5" />
+      <Channel Name="AIReactionsAudioRules" Verbosity="5" />
+      <Channel Name="AIReactionsGameplayRules" Verbosity="5" />
+      <Channel Name="Respawn" Verbosity="5" />
+      <Channel Name="Barks" Verbosity="5" />
+      <Channel Name="AINavigation" Verbosity="5" />
+	  <Channel Name="Agent" Verbosity="5" />
+      <Channel Name="Pawn" Verbosity="5" />
+      <Channel Name="PawnState" Verbosity="5" />
+      <Channel Name="Dialog" Verbosity="5" />
+      <Channel Name="Conversation" Verbosity="5" />
+      <Channel Name="Vehicle" Verbosity="5" />
+      <Channel Name="Game" Verbosity="5" />
+      <Channel Name="Player" Verbosity="5" />
+      <Channel Name="UI" Verbosity="5" />
+      <Channel Name="FX" Verbosity="5" />
+      <Channel Name="TRC" Verbosity="5" />
+      <Channel Name="PlayerRelationship" Verbosity="5" />
+      <Channel Name="DLCManager" Verbosity="5" />
+	  <Channel Name="FuzzyLogic" Verbosity="5" />
+	  <Channel Name="MeleeTakedown" Verbosity="5" />
+      <Channel Name="PlayerPresence" Verbosity="5" />
+      <Channel Name="PDA" Verbosity="5" />
+	  <Channel Name="AISensorySystem" Verbosity="5" />
+      <Channel Name="AIHumanController" Verbosity="5" />
+      <Channel Name="AIVehicleController" Verbosity="5" />
+      <Channel Name="Felony" Verbosity="5" />
+      <Channel Name="Reinforcement" Verbosity="5" />
+      <Channel Name="DriverGameAI" Verbosity="5" />
+      <Channel Name="CoverManager" Verbosity="5" />
+      <Channel Name="DriverGameErrorFacility" Verbosity="5" />
+      <Channel Name="AIHuman" Verbosity="5" />
+      <Channel Name="VehicleAI" Verbosity="5" />
+      <Channel Name="IdentityManager" Verbosity="5" />
+      <Channel Name="NetworkInterface" Verbosity="5" />
+      <Channel Name="Taxi" Verbosity="5" />
+      <Channel Name="Prepare" Verbosity="5" />
+      <Channel Name="NetRobo" Verbosity="5" />
+      <Channel Name="Spawn" Verbosity="5" />
+      <Channel Name="CLOSystem" Verbosity="5" />
+      <Channel Name="CLOReplication" Verbosity="3" />
+      <Channel Name="CLOSystemDB" Verbosity="5" />
+      <Channel Name="CLOSystemSetup" Verbosity="5" />
+      <Channel Name="LivingCity" Verbosity="5" />
+      <Channel Name="Gameplay" Verbosity="5" />
+      <Channel Name="ProfilerTargeting" Verbosity="5" />
+      <Channel Name="ProfilerSystem" Verbosity="5" />
+      <Channel Name="Emergency" Verbosity="5" />
+      <Channel Name="LookAt" Verbosity="5" />
+      <Channel Name="Ghost" Verbosity="5" />
+      <Channel Name="Hacking" Verbosity="5" />
+      <Channel Name="Navigation" Verbosity="5" />
+      <Channel Name="Inventory" Verbosity="5" />
+      <Channel Name="Collectibles" Verbosity="5" />
+      <Channel Name="Mission" Verbosity="5" />
+	  <Channel Name="MissionActivationService" Verbosity="5" />
+      <Channel Name="PluginMissions" Verbosity="5" />
+      <Channel Name="NarrativeIntel" Verbosity="5" />
+      <Channel Name="TrackedMission" Verbosity="5" />
+	  <Channel Name="MissionLayer" Verbosity="5" />
+      <Channel Name="DynamicEvent" Verbosity="5" />
+      <Channel Name="DynamicEventCandidateLogger" Verbosity="5" />
+      <Channel Name="RandomEventFlow" Verbosity="5" />
+      <Channel Name="RandomEventAverageFlow" Verbosity="5" />
+      <Channel Name="PlayerProgression" Verbosity="5" />
+      <Channel Name="Reward" Verbosity="5" />
+      <Channel Name="PortalsMissions" Verbosity="5" SinkId="online" />
+      <Channel Name="ProceduralGameplay" Verbosity="5" />
+	  <Channel Name="DGLogic" Verbosity="5" />
+	  <Channel Name="DGScene" Verbosity="5" />
+	  <Channel Name="Criminality" Verbosity="5" />
+      <Channel Name="NarrativeManager" Verbosity="5" />
+      <Channel Name="MediaSystem" Verbosity="5" />
+      <Channel Name="MotionStates" Verbosity="5" />
+      <Channel Name="ActionStates" Verbosity="5" />
+      <Channel Name="LayeredStanceStates" Verbosity="5" />
+      <Channel Name="LayeredKinesicStates" Verbosity="5" />
+      <Channel Name="GPI" Verbosity="5" />
+      <Channel Name="LockSmith" Verbosity="5" />
+      <Channel Name="KeyManager" Verbosity="5" />
+      <Channel Name="MetadataClient" Verbosity="5" />
+	  <Channel Name="MetadataClientHelper" Verbosity="5" />
+	  <Channel Name="LibraryDatabase" Verbosity="5" />
+      <Channel Name="SaltShaker" Verbosity="5" />
+      <Channel Name="Pilot" Verbosity="5" />
+      <Channel Name="Bloomberg" Verbosity="5" />
+      <Channel Name="SaveGame" Verbosity="5" />
+      <Channel Name="Localization" Verbosity="5" />
+	  <Channel Name="HSA" Verbosity="5" />
+	  <Channel Name="Brick" Verbosity="5" />
+      <Channel Name="MeetingBrick" Verbosity="5" />
+	  <Channel Name="GameMessageService" Verbosity="5" />
+	  <Channel Name="GameControllerManager" Verbosity="5" />
+      <Channel Name="EmergentCollab" Verbosity="5"  SinkId="online" />      
+      <Channel Name="SquadVehicle" Verbosity="5" />
+      <Channel Name="PlayerVision" Verbosity="5" />
+      <Channel Name="Races" Verbosity="5" />
+      <Channel Name="DigitalTrip" Verbosity="5" />
+      <Channel Name="BenchmarkService" Verbosity="5" />
+      <Channel Name="GoTop" Verbosity="5" />
+      <Channel Name="DTestOutputLog" Verbosity="0" />
+	  <Channel Name="AssetStore" Verbosity="5" />
+      <Channel Name="WindowState" Verbosity="5" />
+      <Channel Name="MultiGpu" Verbosity="5" />
+      <Channel Name="Wolfskin" Verbosity="5" />
+      <Channel Name="Persistence" Verbosity="3" SinkId="online"/>
+      <Channel Name="DiscoveryLeakDetection" Verbosity="5" />
+      <Channel Name="OnlineChallenges" Verbosity="5" SinkId="challenge"/>
+      <Channel Name="OpFramework" Verbosity="5" />
+      <Channel Name="NarrativeSystems" Verbosity="5" />
+      <Channel Name="StaticOpData" Verbosity="2" />
+      <Channel Name="PLASMA" Verbosity="5" />
+      <Channel Name="VoteSystem" Verbosity="5" />
+      <Channel Name="KickBan" Verbosity="5" />
+	  <Channel Name="PersistentEntity" Verbosity="3" />
+	  <Channel Name="Raid" Verbosity="5" />
+      <NetChannel Name="NetCoreNode" SinkId="replication" Verbosity="3"  StateEnabled="0"/>
+      <NetChannel Name="NetController" SinkId="replication" Verbosity="3" StateEnabled="0" />
+      <NetChannel Name="NetworkFramework" SinkId="replication" Verbosity="3" RpcEnabled="1" StateEnabled="0" NotificationEnabled="1" JipEnabled="1" />
+	  <NetChannel Name="NetValidation" SinkId="replication" Verbosity="3"  StateEnabled="0" />
+    </Channels>
+  </ErrorConfig>    
+
+  <!-- KeyManagerConfig -->
+  <KeyManagerConfig ServerName="msr-prod-wdksrv.ubisoft.org" KeyRoot="SOFTWARE\\Ubisoft\\WD2" />
+
+  <!-- GDTConfig -->
+  <GDTConfig ServerIP="msr-wd2-gdt01.ubisoft.org" ServerPort="11001" />
+  <GDTConfig DialogServerIP="msr-tst-sds02.ubisoft.org" DialogServerPort="11001" />
+  <GDTConfig GameStatsServerIP="msr-tst-sds02.ubisoft.org" GameStatsServerPort="11001" />
+  
+  <!-- Telemetry config -->
+  <TelemetryConfig ProjectName="Orwell" ServerAddress="orwell-telemetry.ubisoft.org;msr-tele-orw02.ubisoft.org " ServerPort="80" />
+
+
+  <PerformanceBudgetConfig>
+    <Stats>
+      <Stat StatName="MaxDrawCalls" StatBudget="4000" />
+      <Stat StatName="GpuData" StatBudget="15" />
+      <Stat StatName="PunctualLights" StatBudget="2" />
+    </Stats>
+    <CPUStats>
+      <Stat CategoryName="GraphicsTD" StatName="GBuffers" StatBudget="11.0" />
+      <Stat CategoryName="GraphicsTD" StatName="Shadows" StatBudget="5.0" />
+      <Stat CategoryName="GraphicsTD" StatName="BlendedAfterWater" StatBudget="1.0" />
+    </CPUStats>
+  </PerformanceBudgetConfig>
+  <!-- DebugEventLoggerDeploymentConfig -->
+  <DebugEventLoggerDeploymentConfig>
+    <DeploymentPaths>
+	  <DeploymentPath Mask="10.163." Path="\\Ubisoft.org\projects\Orwell\TOR\Tools\DebugEventLogger\"/> <!-- TOR -->
+      <DeploymentPath Mask="10.18." Path="\\\\ubisoft.org\\projects\\Orwell\\BUC\\Tools\\DebugEventLogger\\" />  <!-- BUC -->
+      <DeploymentPath Mask="10.128." Path="\\\\ubisoft.org\\projects\\Orwell\\MTL\\Tools\\DebugEventLogger\\" /> <!-- MTL [ WathDogs Ip Mask ] -->
+      <DeploymentPath Mask="10.3." Path="\\\\ubisoft.org\\projects\\Orwell\\MTL\\Tools\\DebugEventLogger\\" />   <!-- MTL [ FarCry Ip Mask ] -->
+      <DeploymentPath Mask="10.68." Path="\\\\ubisoft.org\\projects\\Orwell\\MRC\\Tools\\DebugEventLogger\\" />  <!-- MRC -->
+	  
+	</DeploymentPaths>
+  </DebugEventLoggerDeploymentConfig>
+
+</Profile>

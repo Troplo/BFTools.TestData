@@ -1,0 +1,87 @@
+<!--
+  HOW TO USE THIS FILE:
+  In this file you will see some example rich presence scenarios that look like this:
+  <Context
+    name="SP Exclusive Mission" // this name is only required for debugging purposes and is never exposed to the player
+    text="Single Player Mission: [#CONTRACT] taking place in the [#DISTRICT] district"> // MUST correspond to an oasis line id, for development purposes only can a raw string be supplied
+    <Data> // a list of data values obtained from the game to replace tags supplied in the above oasis line id
+      <Data_ExclusiveMission replace="[#CONTRACT]"/> // here the data string value of the current mission will replace [#CONTRACT] in the above oasis line id
+      <Data_District replace="[#DISTRICT]"/> // here the data string value of the current district will replace [#CONTRACT] in the above oasis line id
+    </Data>
+    <Conditions> // the conditions supply the context for the rich presence, for example the player must be...
+      <Cond_SinglePlayer/> // ...playing in a single player game mode and...
+      Remember any condition can be inverted by adding 'inverse="1"' (<Cond_InExclusiveMission inverse="1"/>)
+    </Conditions>
+  </Context>
+
+  The following is a list of all currently implemented data values:
+      <Data_ExclusiveMission/> // the players current exclusive mission, regardless of type
+      <Data_District/>         // the district the player is currently in
+  Remember you must always supply a replace="ANY_TAG" value for the data.
+
+  Note: [#CONTRACT] is currently used as the replace tag for Missions for legacy reasons and to replace it we would need to update all the Oasis strings
+
+  The order of conditions is important as the presence system will start at the first context on the list, check the conditions and data and if the
+  conditions are met and the data can be obtained this presence will be set and no further contexts will be tested for. Therefore place your more
+  specific presences first and the more generic ones later.
+  Remember that there must always be an applicable presence. You can add a context that has no conditions as a fall back as the last context in the list.
+-->
+
+<Presence>
+  <Context
+    name="Main menu"
+    text="1020150">
+    <Conditions>
+      <ConditionSet_And>
+        <Cond_InMainMenu/>
+      </ConditionSet_And>
+    </Conditions>
+  </Context>
+
+  <Context
+    name="Loading Screen"
+    text="1020152">
+    <Conditions>
+      <ConditionSet_And>
+        <Cond_InLoadingScreen/>
+      </ConditionSet_And>
+    </Conditions>
+  </Context>
+
+  <Context
+    name="Playing a Tactical Op"
+    text="1020149">
+    <Conditions>
+      <ConditionSet_And>
+        <Cond_InRaid/>
+      </ConditionSet_And>
+    </Conditions>
+  </Context>
+
+  <Context
+    name="Assisting DecSec International"
+    text="805478">
+    <Conditions>
+    <ConditionSet_And>
+      <Cond_InGame/>
+      <Cond_InMultiplayer/>
+    </ConditionSet_And>
+    </Conditions>
+  </Context>
+
+  <Context
+    name="Exploring London"
+    text="1020139">
+    <Conditions>
+      <ConditionSet_And>
+        <Cond_InGame/>
+      </ConditionSet_And>
+    </Conditions>
+  </Context>
+
+  <!-- Default Presence (has no conditions so will default to this if no other contexts are fullfilled) -->
+  <Context
+    name="Default Orwell"
+    text="684878">
+  </Context>
+</Presence>
